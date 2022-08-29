@@ -1,0 +1,217 @@
+{
+  "abi": "X86_64",
+  "abiPlatformVersion": 22,
+  "buildSettings": {
+    "environmentVariables": []
+  },
+  "cmake": {
+    "cmakeArtifactsBaseFolder": "/home/theo/Desktop/loomo-algodev-master/algo_app/.cxx/cmake/debug/x86_64",
+    "cmakeServerLogFile": "/home/theo/Desktop/loomo-algodev-master/algo_app/.cxx/cmake/debug/x86_64/cmake_server_log.txt",
+    "cmakeWrappingBaseFolder": "/home/theo/Desktop/loomo-algodev-master/algo_app/.cxx/cxx/debug/x86_64",
+    "effectiveConfiguration": {
+      "name": "traditional-android-studio-cmake-environment",
+      "description": "Composite reified CMakeSettings configuration",
+      "generator": "Ninja",
+      "inheritEnvironments": [
+        "ndk"
+      ],
+      "buildRoot": "/home/theo/Desktop/loomo-algodev-master/algo_app/.cxx/cmake/debug/x86_64",
+      "cmakeToolchain": "/home/theo/Android/Sdk/ndk-bundle/build/cmake/android.toolchain.cmake",
+      "cmakeExecutable": "/home/theo/Android/Sdk/cmake/3.10.2.4988404/bin/cmake",
+      "variables": [
+        {
+          "name": "CMAKE_CXX_FLAGS",
+          "value": "-std\u003dc++11 -fexceptions -frtti -Wattributes -Werror\u003dreturn-type"
+        },
+        {
+          "name": "CMAKE_TOOLCHAIN_FILE",
+          "value": "/home/theo/Android/Sdk/ndk-bundle/build/cmake/android.toolchain.cmake"
+        },
+        {
+          "name": "ANDROID_PLATFORM",
+          "value": "android-22"
+        },
+        {
+          "name": "CMAKE_ANDROID_ARCH_ABI",
+          "value": "x86_64"
+        },
+        {
+          "name": "CMAKE_ANDROID_NDK",
+          "value": "/home/theo/Android/Sdk/ndk-bundle"
+        },
+        {
+          "name": "CMAKE_EXPORT_COMPILE_COMMANDS",
+          "value": "ON"
+        },
+        {
+          "name": "CMAKE_LIBRARY_OUTPUT_DIRECTORY",
+          "value": "/home/theo/Desktop/loomo-algodev-master/algo_app/build/intermediates/cmake/debug/obj/x86_64"
+        },
+        {
+          "name": "CMAKE_MAKE_PROGRAM",
+          "value": "/home/theo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja"
+        },
+        {
+          "name": "CMAKE_SYSTEM_NAME",
+          "value": "Android"
+        },
+        {
+          "name": "CMAKE_SYSTEM_VERSION",
+          "value": "22"
+        },
+        {
+          "name": "CMAKE_BUILD_TYPE",
+          "value": "Release"
+        },
+        {
+          "name": "ANDROID_NDK",
+          "value": "/home/theo/Android/Sdk/ndk-bundle/"
+        },
+        {
+          "name": "ANDROID_NATIVE_API_LEVEL",
+          "value": "android-22"
+        },
+        {
+          "name": "ANDROID_ABI",
+          "value": "x86_64"
+        },
+        {
+          "name": "ANDROID_TOOLCHAIN_NAME",
+          "value": "clang"
+        },
+        {
+          "name": "ANDROID_STL",
+          "value": "c++_static"
+        }
+      ]
+    }
+  },
+  "cxxBuildFolder": "/home/theo/Desktop/loomo-algodev-master/algo_app/.cxx/cmake/debug/x86_64",
+  "info": {
+    "abi": "X86_64",
+    "bitness": 64,
+    "deprecated": false,
+    "default": true
+  },
+  "originalCxxBuildFolder": "/home/theo/Desktop/loomo-algodev-master/algo_app/.cxx/cmake/debug/x86_64",
+  "variant": {
+    "buildSystemArgumentList": [
+      "-DCMAKE_BUILD_TYPE\u003dRelease",
+      "-DANDROID_NDK\u003d/home/theo/Android/Sdk/ndk-bundle/",
+      "-DANDROID_NATIVE_API_LEVEL\u003dandroid-22",
+      "-DANDROID_ABI\u003dx86_64",
+      "-DANDROID_TOOLCHAIN_NAME\u003dclang",
+      "-DANDROID_STL\u003dc++_static"
+    ],
+    "buildTargetSet": [],
+    "cFlagsList": [],
+    "cmakeSettingsConfiguration": "android-gradle-plugin-predetermined-name",
+    "cppFlagsList": [
+      "-std\u003dc++11 -fexceptions -frtti -Wattributes -Werror\u003dreturn-type"
+    ],
+    "isDebuggableEnabled": true,
+    "module": {
+      "buildSystem": "CMAKE",
+      "cmake": {
+        "cmakeExe": "/home/theo/Android/Sdk/cmake/3.10.2.4988404/bin/cmake",
+        "minimumCmakeVersion": "3.10.2",
+        "ninjaExe": "/home/theo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja"
+      },
+      "cmakeToolchainFile": "/home/theo/Android/Sdk/ndk-bundle/build/cmake/android.toolchain.cmake",
+      "cxxFolder": "/home/theo/Desktop/loomo-algodev-master/algo_app/.cxx",
+      "gradleModulePathName": ":algo_app",
+      "intermediatesFolder": "/home/theo/Desktop/loomo-algodev-master/algo_app/build/intermediates",
+      "makeFile": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+      "moduleBuildFile": "/home/theo/Desktop/loomo-algodev-master/algo_app/build.gradle",
+      "moduleRootFolder": "/home/theo/Desktop/loomo-algodev-master/algo_app",
+      "ndkDefaultAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "ndkFolder": "/home/theo/Android/Sdk/ndk-bundle",
+      "ndkMetaAbiList": [
+        {
+          "abi": "ARMEABI_V7A",
+          "bitness": 32,
+          "deprecated": false,
+          "default": true
+        },
+        {
+          "abi": "ARM64_V8A",
+          "bitness": 64,
+          "deprecated": false,
+          "default": true
+        },
+        {
+          "abi": "X86",
+          "bitness": 32,
+          "deprecated": false,
+          "default": true
+        },
+        {
+          "abi": "X86_64",
+          "bitness": 64,
+          "deprecated": false,
+          "default": true
+        }
+      ],
+      "ndkMetaPlatforms": {
+        "min": 16,
+        "max": 30,
+        "aliases": {
+          "20": 19,
+          "25": 24,
+          "J": 16,
+          "J-MR1": 17,
+          "J-MR2": 18,
+          "K": 19,
+          "L": 21,
+          "L-MR1": 22,
+          "M": 23,
+          "N": 24,
+          "N-MR1": 24,
+          "O": 26,
+          "O-MR1": 27,
+          "P": 28,
+          "Q": 29,
+          "R": 30
+        }
+      },
+      "ndkSupportedAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "ndkVersion": "22.1.7171670",
+      "project": {
+        "compilerSettingsCacheFolder": "/home/theo/Desktop/loomo-algodev-master/.cxx",
+        "cxxFolder": "/home/theo/Desktop/loomo-algodev-master/.cxx",
+        "isBuildOnlyTargetAbiEnabled": true,
+        "isCmakeBuildCohabitationEnabled": false,
+        "isNativeCompilerSettingsCacheEnabled": false,
+        "rootBuildGradleFolder": "/home/theo/Desktop/loomo-algodev-master",
+        "sdkFolder": "/home/theo/Android/Sdk"
+      },
+      "splitsAbiFilterSet": [],
+      "stlSharedObjectMap": {
+        "LIBCXX_SHARED": {
+          "ARMEABI_V7A": "/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/arm-linux-androideabi/libc++_shared.so",
+          "ARM64_V8A": "/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/libc++_shared.so",
+          "X86": "/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/i686-linux-android/libc++_shared.so",
+          "X86_64": "/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/x86_64-linux-android/libc++_shared.so"
+        },
+        "LIBCXX_STATIC": {},
+        "NONE": {},
+        "SYSTEM": {}
+      }
+    },
+    "objFolder": "/home/theo/Desktop/loomo-algodev-master/algo_app/build/intermediates/cmake/debug/obj",
+    "variantName": "debug",
+    "validAbiList": [
+      "X86_64"
+    ]
+  }
+}

@@ -1,0 +1,296 @@
+[
+  {
+    "level": "INFO",
+    "message": "Start JSON generation. Platform version: 22 min SDK version: x86_64",
+    "file": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "No CMake version was specified in build.gradle. Using default version 3.10.2.",
+    "file": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Trying to locate CMake in local SDK repository.",
+    "file": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "- CMake found in SDK at \u0027/home/theo/Android/Sdk/cmake/3.10.2.4988404\u0027 had version \u00273.10.2\u0027",
+    "file": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "rebuilding JSON /home/theo/Desktop/loomo-algodev-master/algo_app/.cxx/cmake/release/x86_64/android_gradle_build.json due to:",
+    "file": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "- a dependent build file changed",
+    "file": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "  - /home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "file": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "keeping json folder \u0027/home/theo/Desktop/loomo-algodev-master/algo_app/.cxx/cmake/release/x86_64\u0027 but regenerating project",
+    "file": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "executing cmake Executable : /home/theo/Android/Sdk/cmake/3.10.2.4988404/bin/cmake\narguments : \n-H/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni\n-DCMAKE_CXX_FLAGS\u003d-std\u003dc++11 -fexceptions -frtti -Wattributes -Werror\u003dreturn-type\n-DCMAKE_TOOLCHAIN_FILE\u003d/home/theo/Android/Sdk/ndk-bundle/build/cmake/android.toolchain.cmake\n-DANDROID_PLATFORM\u003dandroid-22\n-DCMAKE_ANDROID_ARCH_ABI\u003dx86_64\n-DCMAKE_ANDROID_NDK\u003d/home/theo/Android/Sdk/ndk-bundle\n-DCMAKE_EXPORT_COMPILE_COMMANDS\u003dON\n-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003d/home/theo/Desktop/loomo-algodev-master/algo_app/build/intermediates/cmake/release/obj/x86_64\n-DCMAKE_MAKE_PROGRAM\u003d/home/theo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja\n-DCMAKE_SYSTEM_NAME\u003dAndroid\n-DCMAKE_SYSTEM_VERSION\u003d22\n-DCMAKE_BUILD_TYPE\u003dRelease\n-DANDROID_NDK\u003d/home/theo/Android/Sdk/ndk-bundle/\n-DANDROID_NATIVE_API_LEVEL\u003dandroid-22\n-DANDROID_ABI\u003dx86_64\n-DANDROID_TOOLCHAIN_NAME\u003dclang\n-DANDROID_STL\u003dc++_static\n-B/home/theo/Desktop/loomo-algodev-master/algo_app/.cxx/cmake/release/x86_64\n-GNinja\njvmArgs : \n\n",
+    "file": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "\n",
+    "file": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "[\u003d\u003d \"CMake Server\" \u003d\u003d[\n",
+    "file": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"supportedProtocolVersions\":[{\"isExperimental\":true,\"major\":1,\"minor\":1}],\"type\":\"hello\"}\n",
+    "file": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "]\u003d\u003d \"CMake Server\" \u003d\u003d]\n",
+    "file": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\n  \"type\": \"handshake\",\n  \"cookie\": \"gradle-cmake-cookie\",\n  \"protocolVersion\": {\n    \"isExperimental\": true,\n    \"major\": 1,\n    \"minor\": 1\n  },\n  \"sourceDirectory\": \"/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni\",\n  \"buildDirectory\": \"/home/theo/Desktop/loomo-algodev-master/algo_app/.cxx/cmake/release/x86_64\",\n  \"generator\": \"Ninja\"\n}\n",
+    "file": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"gradle-cmake-cookie\",\"inReplyTo\":\"handshake\",\"type\":\"reply\"}\n",
+    "file": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\n  \"type\": \"configure\",\n  \"cacheArguments\": [\n    \"\",\n    \"-DCMAKE_CXX_FLAGS\\u003d-std\\u003dc++11 -fexceptions -frtti -Wattributes -Werror\\u003dreturn-type\",\n    \"-DCMAKE_TOOLCHAIN_FILE\\u003d/home/theo/Android/Sdk/ndk-bundle/build/cmake/android.toolchain.cmake\",\n    \"-DANDROID_PLATFORM\\u003dandroid-22\",\n    \"-DCMAKE_ANDROID_ARCH_ABI\\u003dx86_64\",\n    \"-DCMAKE_ANDROID_NDK\\u003d/home/theo/Android/Sdk/ndk-bundle\",\n    \"-DCMAKE_EXPORT_COMPILE_COMMANDS\\u003dON\",\n    \"-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\\u003d/home/theo/Desktop/loomo-algodev-master/algo_app/build/intermediates/cmake/release/obj/x86_64\",\n    \"-DCMAKE_MAKE_PROGRAM\\u003d/home/theo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja\",\n    \"-DCMAKE_SYSTEM_NAME\\u003dAndroid\",\n    \"-DCMAKE_SYSTEM_VERSION\\u003d22\",\n    \"-DCMAKE_BUILD_TYPE\\u003dRelease\",\n    \"-DANDROID_NDK\\u003d/home/theo/Android/Sdk/ndk-bundle/\",\n    \"-DANDROID_NATIVE_API_LEVEL\\u003dandroid-22\",\n    \"-DANDROID_ABI\\u003dx86_64\",\n    \"-DANDROID_TOOLCHAIN_NAME\\u003dclang\",\n    \"-DANDROID_STL\\u003dc++_static\"\n  ]\n}\n",
+    "file": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\"CMake Warning at /home/theo/Android/Sdk/ndk-bundle/build/cmake/android.toolchain.cmake:449 (message):\\n  An old version of CMake is being used that cannot automatically detect\\n  compiler attributes.  Compiler identification is being bypassed.  Some\\n  values may be wrong or missing.  Update to CMake 3.19 or newer to use\\n  CMake\u0027s built-in compiler identification.\\nCall Stack (most recent call first):\\n  /home/theo/Desktop/loomo-algodev-master/algo_app/.cxx/cmake/release/x86_64/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)\\n  CMakeLists.txt:2 (project)\\n\\n\",\"title\":\"Warning\",\"type\":\"message\"}\n",
+    "file": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "WARN",
+    "message": "CMake Warning at /home/theo/Android/Sdk/ndk-bundle/build/cmake/android.toolchain.cmake:449 (message):\n  An old version of CMake is being used that cannot automatically detect\n  compiler attributes.  Compiler identification is being bypassed.  Some\n  values may be wrong or missing.  Update to CMake 3.19 or newer to use\n  CMake\u0027s built-in compiler identification.\nCall Stack (most recent call first):\n  /home/theo/Desktop/loomo-algodev-master/algo_app/.cxx/cmake/release/x86_64/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)\n  CMakeLists.txt:2 (project)\n",
+    "file": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\" SDK path is /home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/../../../..\",\"type\":\"message\"}\n",
+    "file": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": " SDK path is /home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/../../../..",
+    "file": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\" Dep path is /home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/../../../../dependency\",\"type\":\"message\"}\n",
+    "file": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": " Dep path is /home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/../../../../dependency",
+    "file": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\"algo lib path is /home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/../../../../dependency/algo_lib\",\"type\":\"message\"}\n",
+    "file": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "algo lib path is /home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/../../../../dependency/algo_lib",
+    "file": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\" algo include path is /home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/../../../../dependency/algo_include\",\"type\":\"message\"}\n",
+    "file": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": " algo include path is /home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/../../../../dependency/algo_include",
+    "file": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\" 3rdparty path is /home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/../../../../dependency/3rdparty_android\",\"type\":\"message\"}\n",
+    "file": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": " 3rdparty path is /home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/../../../../dependency/3rdparty_android",
+    "file": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\"LINK_LIBRARIES_LIST: AlgoBase;RealSense;local_mapping\",\"type\":\"message\"}\n",
+    "file": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "LINK_LIBRARIES_LIST: AlgoBase;RealSense;local_mapping",
+    "file": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\"the lib list is \",\"type\":\"message\"}\n",
+    "file": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "the lib list is ",
+    "file": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"progressCurrent\":1000,\"progressMaximum\":1000,\"progressMessage\":\"Configuring\",\"progressMinimum\":0,\"type\":\"progress\"}\n",
+    "file": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\"Configuring done\",\"type\":\"message\"}\n",
+    "file": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Configuring done",
+    "file": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"type\":\"reply\"}\n",
+    "file": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"type\":\"compute\"}\n",
+    "file": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"compute\",\"progressCurrent\":1000,\"progressMaximum\":1000,\"progressMessage\":\"Generating\",\"progressMinimum\":0,\"type\":\"progress\"}\n",
+    "file": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"compute\",\"message\":\"Generating done\",\"type\":\"message\"}\n",
+    "file": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Generating done",
+    "file": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"compute\",\"type\":\"reply\"}\n",
+    "file": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"type\":\"cmakeInputs\"}\n",
+    "file": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"buildFiles\":[{\"isCMake\":true,\"isTemporary\":false,\"sources\":[\"/home/theo/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeSystemSpecificInitialize.cmake\",\"/home/theo/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Initialize.cmake\",\"/home/theo/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeSystemSpecificInformation.cmake\",\"/home/theo/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeGenericSystem.cmake\",\"/home/theo/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android.cmake\",\"/home/theo/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Linux.cmake\",\"/home/theo/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/UnixPaths.cmake\",\"/home/theo/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCInformation.cmake\",\"/home/theo/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeLanguageInformation.cmake\",\"/home/theo/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-C.cmake\",\"/home/theo/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang.cmake\",\"/home/theo/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/CMakeCommonCompilerMacros.cmake\",\"/home/theo/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/GNU.cmake\",\"/home/theo/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/CMakeCommonCompilerMacros.cmake\",\"/home/theo/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Clang-C.cmake\",\"/home/theo/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Clang.cmake\",\"/home/theo/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCommonLanguageInclude.cmake\",\"/home/theo/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCXXInformation.cmake\",\"/home/theo/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeLanguageInformation.cmake\",\"/home/theo/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX.cmake\",\"/home/theo/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang.cmake\",\"/home/theo/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Clang-CXX.cmake\",\"/home/theo/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Clang.cmake\",\"/home/theo/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCommonLanguageInclude.cmake\",\"/home/theo/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/FindPackageHandleStandardArgs.cmake\",\"/home/theo/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/FindPackageMessage.cmake\"]},{\"isCMake\":false,\"isTemporary\":false,\"sources\":[\"CMakeLists.txt\",\"/home/theo/Android/Sdk/ndk-bundle/build/cmake/android.toolchain.cmake\",\"/home/theo/Android/Sdk/ndk-bundle/build/cmake/platforms.cmake\",\"/home/theo/Android/Sdk/ndk-bundle/build/cmake/compiler_id.cmake\",\"../../../../dependency/3rdparty_android/opencv-3.4.0_shared/sdk/native/jni/OpenCVConfig-version.cmake\",\"../../../../dependency/3rdparty_android/opencv-3.4.0_shared/sdk/native/jni/OpenCVConfig.cmake\",\"../../../../dependency/3rdparty_android/opencv-3.4.0_shared/sdk/native/jni/abi-x86_64/OpenCVConfig.cmake\",\"../../../../dependency/3rdparty_android/opencv-3.4.0_shared/sdk/native/jni/abi-x86_64/OpenCVModules.cmake\",\"../../../../dependency/3rdparty_android/opencv-3.4.0_shared/sdk/native/jni/abi-x86_64/OpenCVModules-release.cmake\",\"scripts/lib_list.cfg.in\"]},{\"isCMake\":false,\"isTemporary\":true,\"sources\":[\"../../../.cxx/cmake/release/x86_64/CMakeFiles/3.10.2/CMakeSystem.cmake\",\"../../../.cxx/cmake/release/x86_64/CMakeFiles/3.10.2/CMakeCCompiler.cmake\",\"../../../.cxx/cmake/release/x86_64/CMakeFiles/3.10.2/CMakeCXXCompiler.cmake\"]}],\"cmakeRootDirectory\":\"/home/theo/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10\",\"cookie\":\"\",\"inReplyTo\":\"cmakeInputs\",\"sourceDirectory\":\"/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni\",\"type\":\"reply\"}\n",
+    "file": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"type\":\"codemodel\"}\n",
+    "file": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"configurations\":[{\"name\":\"Release\",\"projects\":[{\"buildDirectory\":\"/home/theo/Desktop/loomo-algodev-master/algo_app/.cxx/cmake/release/x86_64\",\"name\":\"Algo\",\"sourceDirectory\":\"/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni\",\"targets\":[{\"artifacts\":[\"/home/theo/Desktop/loomo-algodev-master/algo_app/build/intermediates/cmake/release/obj/x86_64/libAlgo.so\"],\"buildDirectory\":\"/home/theo/Desktop/loomo-algodev-master/algo_app/.cxx/cmake/release/x86_64\",\"fileGroups\":[{\"compileFlags\":\"-std\u003dc++11 -fexceptions -frtti -Wattributes -Werror\u003dreturn-type -O2 -DNDEBUG  -fPIC  \",\"defines\":[\"APP_FOLLOW\",\"Algo_EXPORTS\"],\"includePath\":[{\"path\":\"/usr/include/x86_64-linux-android\"},{\"isSystem\":true,\"path\":\"/home/theo/Desktop/loomo-algodev-master/dependency/3rdparty_android/opencv-3.4.0_shared/sdk/native/jni/include\"},{\"isSystem\":true,\"path\":\"/home/theo/Desktop/loomo-algodev-master/dependency/3rdparty_android/opencv-3.4.0_shared/sdk/native/jni/include/opencv\"},{\"path\":\"/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/core\"},{\"path\":\"/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/../../../../dependency/3rdparty_android\"},{\"path\":\"/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/../../../../dependency/algo_include/general\"},{\"path\":\"/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/../../../../dependency/algo_include/tools/linear_math\"},{\"path\":\"/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/../../../../dependency/algo_include/tools/impl\"},{\"path\":\"/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/../../../../dependency/algobaseInclude/core\"},{\"path\":\"/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/../../../../dependency/algobaseInclude/utils\"},{\"path\":\"/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/../../../../dependency/algobaseInclude/interface\"},{\"path\":\"/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/app_follow\"}],\"isGenerated\":false,\"language\":\"CXX\",\"sources\":[\"core/Entry.cpp\",\"core/Algo.cpp\",\"core/AlgoImpl.cpp\",\"app_follow/AlgoFollow.cpp\",\"app_follow/SocketServer.cpp\",\"app_follow/PID.cpp\",\"app_follow/DepthPreprocess.cpp\",\"../../../../dependency/algobaseInclude/utils/AlgoUtils.cpp\"]}],\"fullName\":\"libAlgo.so\",\"linkFlags\":\"-Wl,--exclude-libs,libgcc.a -Wl,--exclude-libs,libgcc_real.a -Wl,--exclude-libs,libatomic.a -static-libstdc++ -Wl,--build-id\u003dsha1 -Wl,--no-rosegment -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments\",\"linkLibraries\":\"/home/theo/Desktop/loomo-algodev-master/dependency/3rdparty_android/opencv-3.4.0_shared/sdk/native/libs/x86_64/libopencv_objdetect.so /home/theo/Desktop/loomo-algodev-master/dependency/3rdparty_android/opencv-3.4.0_shared/sdk/native/libs/x86_64/libopencv_stitching.so /home/theo/Desktop/loomo-algodev-master/dependency/3rdparty_android/opencv-3.4.0_shared/sdk/native/libs/x86_64/libopencv_superres.so /home/theo/Desktop/loomo-algodev-master/dependency/3rdparty_android/opencv-3.4.0_shared/sdk/native/libs/x86_64/libopencv_videostab.so /home/theo/Desktop/loomo-algodev-master/dependency/3rdparty_android/opencv-3.4.0_shared/sdk/native/libs/x86_64/libopencv_img_hash.so /home/theo/Desktop/loomo-algodev-master/dependency/3rdparty_android/opencv-3.4.0_shared/sdk/native/libs/x86_64/libopencv_phase_unwrapping.so /home/theo/Desktop/loomo-algodev-master/dependency/3rdparty_android/opencv-3.4.0_shared/sdk/native/libs/x86_64/libopencv_rgbd.so /home/theo/Desktop/loomo-algodev-master/dependency/3rdparty_android/opencv-3.4.0_shared/sdk/native/libs/x86_64/libopencv_saliency.so /home/theo/Desktop/loomo-algodev-master/dependency/3rdparty_android/opencv-3.4.0_shared/sdk/native/libs/x86_64/libopencv_xfeatures2d.so /home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/../../../../dependency/aar/libAlgoBase.so -lRealSense -llocal_mapping -llog -lz -ldl -lm -lc -ljnigraphics -landroid /home/theo/Desktop/loomo-algodev-master/dependency/3rdparty_android/opencv-3.4.0_shared/sdk/native/libs/x86_64/libopencv_ml.so /home/theo/Desktop/loomo-algodev-master/dependency/3rdparty_android/opencv-3.4.0_shared/sdk/native/libs/x86_64/libopencv_shape.so /home/theo/Desktop/loomo-algodev-master/dependency/3rdparty_android/opencv-3.4.0_shared/sdk/native/libs/x86_64/libopencv_photo.so /home/theo/Desktop/loomo-algodev-master/dependency/3rdparty_android/opencv-3.4.0_shared/sdk/native/libs/x86_64/libopencv_video.so /home/theo/Desktop/loomo-algodev-master/dependency/3rdparty_android/opencv-3.4.0_shared/sdk/native/libs/x86_64/libopencv_calib3d.so /home/theo/Desktop/loomo-algodev-master/dependency/3rdparty_android/opencv-3.4.0_shared/sdk/native/libs/x86_64/libopencv_features2d.so /home/theo/Desktop/loomo-algodev-master/dependency/3rdparty_android/opencv-3.4.0_shared/sdk/native/libs/x86_64/libopencv_flann.so /home/theo/Desktop/loomo-algodev-master/dependency/3rdparty_android/opencv-3.4.0_shared/sdk/native/libs/x86_64/libopencv_highgui.so /home/theo/Desktop/loomo-algodev-master/dependency/3rdparty_android/opencv-3.4.0_shared/sdk/native/libs/x86_64/libopencv_videoio.so /home/theo/Desktop/loomo-algodev-master/dependency/3rdparty_android/opencv-3.4.0_shared/sdk/native/libs/x86_64/libopencv_imgcodecs.so /home/theo/Desktop/loomo-algodev-master/dependency/3rdparty_android/opencv-3.4.0_shared/sdk/native/libs/x86_64/libopencv_imgproc.so /home/theo/Desktop/loomo-algodev-master/dependency/3rdparty_android/opencv-3.4.0_shared/sdk/native/libs/x86_64/libopencv_core.so -ldl -lm -lc -ljnigraphics -landroid -Wl,-rpath-link,/home/theo/Desktop/loomo-algodev-master/dependency/3rdparty_android/opencv-3.4.0_shared/sdk/native/libs/x86_64 -latomic -lm\",\"linkPath\":\"-L/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/../../../../dependency/algo_lib\",\"linkerLanguage\":\"CXX\",\"name\":\"Algo\",\"sourceDirectory\":\"/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni\",\"sysroot\":\"/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot\",\"type\":\"SHARED_LIBRARY\"}]}]}],\"cookie\":\"\",\"inReplyTo\":\"codemodel\",\"type\":\"reply\"}\n",
+    "file": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "done executing cmake",
+    "file": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "write build output /home/theo/Desktop/loomo-algodev-master/algo_app/.cxx/cmake/release/x86_64/build_output.txt",
+    "file": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "write command file /home/theo/Desktop/loomo-algodev-master/algo_app/.cxx/cmake/release/x86_64/build_command.txt",
+    "file": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "JSON generation completed without problems",
+    "file": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "release|x86_64"
+  }
+]

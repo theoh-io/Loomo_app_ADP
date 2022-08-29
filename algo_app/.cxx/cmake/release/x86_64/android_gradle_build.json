@@ -1,0 +1,84 @@
+{
+  "stringTable": {
+    "0": "/home/theo/Desktop/loomo-algodev-master/algo_app/.cxx/cmake/release/x86_64",
+    "1": "--target=x86_64-none-linux-android22 --gcc-toolchain=/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DAPP_FOLLOW -DAlgo_EXPORTS -I/usr/include/x86_64-linux-android -isystem /home/theo/Desktop/loomo-algodev-master/dependency/3rdparty_android/opencv-3.4.0_shared/sdk/native/jni/include -isystem /home/theo/Desktop/loomo-algodev-master/dependency/3rdparty_android/opencv-3.4.0_shared/sdk/native/jni/include/opencv -I/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/core -I/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/../../../../dependency/3rdparty_android -I/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/../../../../dependency/algo_include/general -I/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/../../../../dependency/algo_include/tools/linear_math -I/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/../../../../dependency/algo_include/tools/impl -I/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/../../../../dependency/algobaseInclude/core -I/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/../../../../dependency/algobaseInclude/utils -I/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/../../../../dependency/algobaseInclude/interface -I/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/app_follow -std=c++11 -fexceptions -frtti -Wattributes -Werror=return-type -O2 -DNDEBUG -fPIC"
+  },
+  "buildFiles": [
+    "/home/theo/Android/Sdk/ndk-bundle/build/cmake/android.toolchain.cmake",
+    "/home/theo/Desktop/loomo-algodev-master/dependency/3rdparty_android/opencv-3.4.0_shared/sdk/native/jni/abi-x86_64/OpenCVModules-release.cmake",
+    "/home/theo/Desktop/loomo-algodev-master/dependency/3rdparty_android/opencv-3.4.0_shared/sdk/native/jni/OpenCVConfig-version.cmake",
+    "/home/theo/Android/Sdk/ndk-bundle/build/cmake/platforms.cmake",
+    "/home/theo/Android/Sdk/ndk-bundle/build/cmake/compiler_id.cmake",
+    "/home/theo/Desktop/loomo-algodev-master/dependency/3rdparty_android/opencv-3.4.0_shared/sdk/native/jni/abi-x86_64/OpenCVModules.cmake",
+    "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/scripts/lib_list.cfg.in",
+    "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "/home/theo/Desktop/loomo-algodev-master/dependency/3rdparty_android/opencv-3.4.0_shared/sdk/native/jni/OpenCVConfig.cmake",
+    "/home/theo/Desktop/loomo-algodev-master/dependency/3rdparty_android/opencv-3.4.0_shared/sdk/native/jni/abi-x86_64/OpenCVConfig.cmake"
+  ],
+  "cleanCommands": [
+    "/home/theo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja -C \"/home/theo/Desktop/loomo-algodev-master/algo_app/.cxx/cmake/release/x86_64\" clean"
+  ],
+  "buildTargetsCommand": "/home/theo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja  -C \"/home/theo/Desktop/loomo-algodev-master/algo_app/.cxx/cmake/release/x86_64\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "Algo-Release-x86_64": {
+      "buildCommand": "/home/theo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja -C \"/home/theo/Desktop/loomo-algodev-master/algo_app/.cxx/cmake/release/x86_64\" Algo",
+      "buildType": "release",
+      "toolchain": "1507142677",
+      "abi": "x86_64",
+      "artifactName": "Algo",
+      "files": [
+        {
+          "src": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/core/Entry.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/core/Algo.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/core/AlgoImpl.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/app_follow/AlgoFollow.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/app_follow/SocketServer.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/app_follow/PID.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/app_follow/DepthPreprocess.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "/home/theo/Desktop/loomo-algodev-master/dependency/algobaseInclude/utils/AlgoUtils.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        }
+      ],
+      "headers": [],
+      "output": "/home/theo/Desktop/loomo-algodev-master/algo_app/build/intermediates/cmake/release/obj/x86_64/libAlgo.so"
+    }
+  },
+  "toolchains": {
+    "1507142677": {
+      "cppCompilerExecutable": "/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++"
+    }
+  },
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}

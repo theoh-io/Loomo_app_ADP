@@ -1,0 +1,18 @@
+CMake Warning at /home/theo/Android/Sdk/ndk-bundle/build/cmake/android.toolchain.cmake:449 (message):
+  An old version of CMake is being used that cannot automatically detect
+  compiler attributes.  Compiler identification is being bypassed.  Some
+  values may be wrong or missing.  Update to CMake 3.19 or newer to use
+  CMake's built-in compiler identification.
+Call Stack (most recent call first):
+  /home/theo/Desktop/loomo-algodev-master/algo_app/.cxx/cmake/debug/x86_64/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)
+  CMakeLists.txt:2 (project)
+
+
+ SDK path is /home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/../../../..
+ Dep path is /home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/../../../../dependency
+algo lib path is /home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/../../../../dependency/algo_lib
+ algo include path is /home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/../../../../dependency/algo_include
+ 3rdparty path is /home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/../../../../dependency/3rdparty_android
+LINK_LIBRARIES_LIST: AlgoBase;RealSense;local_mapping
+the lib list is 
+Configuring done

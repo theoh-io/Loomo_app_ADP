@@ -1,0 +1,37 @@
+{
+  "ndkFolder": "/home/theo/Android/Sdk/ndk-bundle",
+  "messages": [
+    {
+      "level": "INFO",
+      "message": "android.ndkVersion from module build.gradle is not set"
+    },
+    {
+      "level": "INFO",
+      "message": "ndk.dir in local.properties is /home/theo/Android/Sdk/ndk-bundle"
+    },
+    {
+      "level": "INFO",
+      "message": "ANDROID_NDK_HOME environment variable is not set"
+    },
+    {
+      "level": "INFO",
+      "message": "sdkFolder is /home/theo/Android/Sdk"
+    },
+    {
+      "level": "INFO",
+      "message": "NDK side-by-side folder from sdkFolder /home/theo/Android/Sdk/ndk does not exist"
+    },
+    {
+      "level": "INFO",
+      "message": "Considering /home/theo/Android/Sdk/ndk-bundle by ndk.dir"
+    },
+    {
+      "level": "INFO",
+      "message": "Considering /home/theo/Android/Sdk/ndk-bundle in SDK ndk-bundle folder"
+    },
+    {
+      "level": "INFO",
+      "message": "Found requested ndk.dir (/home/theo/Android/Sdk/ndk-bundle) which has version 22.1.7171670"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+# ninja log v5
+3	3195	1647338208	CMakeFiles/Algo.dir/app_localmapping_test/AlgoLocalmappingTest.cpp.o	dd86017df669f4ac
+2	2954	1651492196	CMakeFiles/Algo.dir/home/theo/Desktop/loomo-algodev-master/dependency/algobaseInclude/utils/AlgoUtils.cpp.o	7198ced7fc2c1f87
+2	4248	1647337799	CMakeFiles/Algo.dir/app_test/AlgoTest.cpp.o	7583e2d0b600ebef
+2	1999	1651492195	CMakeFiles/Algo.dir/core/Algo.cpp.o	3e4735fb65b2d305
+2	4497	1647281938	CMakeFiles/Algo.dir/app_VITA_testing/VITA_testing.cpp.o	e3875b7e8bd2325e
+12	2700	1647281936	CMakeFiles/Algo.dir/app_VITA_testing/DepthPreprocess.cpp.o	43f1270cb7442b
+3	2685	1647254975	CMakeFiles/Algo.dir/app_socket/SocketServer.cpp.o	a5b4ad496705fdd9
+2	2675	1651492196	CMakeFiles/Algo.dir/core/AlgoImpl.cpp.o	a8c1f22d9680ebbb
+3	754	1647255058	CMakeFiles/Algo.dir/app_follow/PID.cpp.o	15b163bdd864113e
+2954	2996	1651492196	/home/theo/Desktop/loomo-algodev-master/algo_app/build/intermediates/cmake/debug/obj/x86_64/libAlgo.so	dbc14b473c92524a
+3	2614	1647281936	CMakeFiles/Algo.dir/app_VITA_testing/SocketServer.cpp.o	d53b4a7e90ad4afc
+3	3802	1647255032	CMakeFiles/Algo.dir/app_socket/AlgoSocket.cpp.o	9c73d30c83aa5619
+2	2848	1647255060	CMakeFiles/Algo.dir/app_follow/SocketServer.cpp.o	aee9fbd8c4cdb715
+4	3464	1647850546	CMakeFiles/Algo.dir/app_tensorflow_sample/AlgoTensorflowSample.cpp.o	f08a3ae5d4ae3586
+6	637	1647281934	CMakeFiles/Algo.dir/app_VITA_testing/PID.cpp.o	e4a92f8df3a576a3
+2	1429	1651492195	CMakeFiles/Algo.dir/core/Entry.cpp.o	9d254a2801c2afc1
+5	2819	1647255060	CMakeFiles/Algo.dir/app_follow/DepthPreprocess.cpp.o	f71f40b184a25791
+1	4115	1647255061	CMakeFiles/Algo.dir/app_follow/AlgoFollow.cpp.o	341187aa58bda85b

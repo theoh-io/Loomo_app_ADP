@@ -1,0 +1,26 @@
+{
+  "buildFiles": [
+    "/home/theo/Android/Sdk/ndk-bundle/build/cmake/android.toolchain.cmake",
+    "/home/theo/Desktop/loomo-algodev-master/dependency/3rdparty_android/opencv-3.4.0_shared/sdk/native/jni/abi-x86_64/OpenCVModules-release.cmake",
+    "/home/theo/Desktop/loomo-algodev-master/dependency/3rdparty_android/opencv-3.4.0_shared/sdk/native/jni/OpenCVConfig-version.cmake",
+    "/home/theo/Android/Sdk/ndk-bundle/build/cmake/platforms.cmake",
+    "/home/theo/Android/Sdk/ndk-bundle/build/cmake/compiler_id.cmake",
+    "/home/theo/Desktop/loomo-algodev-master/dependency/3rdparty_android/opencv-3.4.0_shared/sdk/native/jni/abi-x86_64/OpenCVModules.cmake",
+    "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/scripts/lib_list.cfg.in",
+    "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
+    "/home/theo/Desktop/loomo-algodev-master/dependency/3rdparty_android/opencv-3.4.0_shared/sdk/native/jni/OpenCVConfig.cmake",
+    "/home/theo/Desktop/loomo-algodev-master/dependency/3rdparty_android/opencv-3.4.0_shared/sdk/native/jni/abi-x86_64/OpenCVConfig.cmake"
+  ],
+  "cleanCommands": [
+    "/home/theo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja -C \"/home/theo/Desktop/loomo-algodev-master/algo_app/.cxx/cmake/debug/x86_64\" clean"
+  ],
+  "buildTargetsCommand": "/home/theo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja  -C \"/home/theo/Desktop/loomo-algodev-master/algo_app/.cxx/cmake/debug/x86_64\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "Algo-Release-x86_64": {
+      "artifactName": "Algo",
+      "buildCommand": "/home/theo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja -C \"/home/theo/Desktop/loomo-algodev-master/algo_app/.cxx/cmake/debug/x86_64\" Algo",
+      "abi": "x86_64",
+      "output": "/home/theo/Desktop/loomo-algodev-master/algo_app/build/intermediates/cmake/debug/obj/x86_64/libAlgo.so"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+Executable : /home/theo/Android/Sdk/cmake/3.10.2.4988404/bin/cmake
+arguments : 
+-H/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni
+-DCMAKE_CXX_FLAGS=-std=c++11 -fexceptions -frtti -Wattributes -Werror=return-type
+-DCMAKE_TOOLCHAIN_FILE=/home/theo/Android/Sdk/ndk-bundle/build/cmake/android.toolchain.cmake
+-DANDROID_PLATFORM=android-22
+-DCMAKE_ANDROID_ARCH_ABI=x86_64
+-DCMAKE_ANDROID_NDK=/home/theo/Android/Sdk/ndk-bundle
+-DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/home/theo/Desktop/loomo-algodev-master/algo_app/build/intermediates/cmake/release/obj/x86_64
+-DCMAKE_MAKE_PROGRAM=/home/theo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja
+-DCMAKE_SYSTEM_NAME=Android
+-DCMAKE_SYSTEM_VERSION=22
+-DCMAKE_BUILD_TYPE=Release
+-DANDROID_NDK=/home/theo/Android/Sdk/ndk-bundle/
+-DANDROID_NATIVE_API_LEVEL=android-22
+-DANDROID_ABI=x86_64
+-DANDROID_TOOLCHAIN_NAME=clang
+-DANDROID_STL=c++_static
+-B/home/theo/Desktop/loomo-algodev-master/algo_app/.cxx/cmake/release/x86_64
+-GNinja
+jvmArgs : 
+
+Build command args:
