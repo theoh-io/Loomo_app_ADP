@@ -5,9 +5,9 @@
     "environmentVariables": []
   },
   "cmake": {
-    "cmakeArtifactsBaseFolder": "/home/theo/Desktop/loomo-algodev-master/algo_app/.cxx/cmake/debug/x86_64",
-    "cmakeServerLogFile": "/home/theo/Desktop/loomo-algodev-master/algo_app/.cxx/cmake/debug/x86_64/cmake_server_log.txt",
-    "cmakeWrappingBaseFolder": "/home/theo/Desktop/loomo-algodev-master/algo_app/.cxx/cxx/debug/x86_64",
+    "cmakeArtifactsBaseFolder": "/home/theo/Desktop/Loomo_app_ADP/algo_app/.cxx/cmake/debug/x86_64",
+    "cmakeServerLogFile": "/home/theo/Desktop/Loomo_app_ADP/algo_app/.cxx/cmake/debug/x86_64/cmake_server_log.txt",
+    "cmakeWrappingBaseFolder": "/home/theo/Desktop/Loomo_app_ADP/algo_app/.cxx/cxx/debug/x86_64",
     "effectiveConfiguration": {
       "name": "traditional-android-studio-cmake-environment",
       "description": "Composite reified CMakeSettings configuration",
@@ -15,7 +15,7 @@
       "inheritEnvironments": [
         "ndk"
       ],
-      "buildRoot": "/home/theo/Desktop/loomo-algodev-master/algo_app/.cxx/cmake/debug/x86_64",
+      "buildRoot": "/home/theo/Desktop/Loomo_app_ADP/algo_app/.cxx/cmake/debug/x86_64",
       "cmakeToolchain": "/home/theo/Android/Sdk/ndk-bundle/build/cmake/android.toolchain.cmake",
       "cmakeExecutable": "/home/theo/Android/Sdk/cmake/3.10.2.4988404/bin/cmake",
       "variables": [
@@ -45,7 +45,7 @@
         },
         {
           "name": "CMAKE_LIBRARY_OUTPUT_DIRECTORY",
-          "value": "/home/theo/Desktop/loomo-algodev-master/algo_app/build/intermediates/cmake/debug/obj/x86_64"
+          "value": "/home/theo/Desktop/Loomo_app_ADP/algo_app/build/intermediates/cmake/debug/obj/x86_64"
         },
         {
           "name": "CMAKE_MAKE_PROGRAM",
@@ -86,14 +86,14 @@
       ]
     }
   },
-  "cxxBuildFolder": "/home/theo/Desktop/loomo-algodev-master/algo_app/.cxx/cmake/debug/x86_64",
+  "cxxBuildFolder": "/home/theo/Desktop/Loomo_app_ADP/algo_app/.cxx/cmake/debug/x86_64",
   "info": {
     "abi": "X86_64",
     "bitness": 64,
     "deprecated": false,
     "default": true
   },
-  "originalCxxBuildFolder": "/home/theo/Desktop/loomo-algodev-master/algo_app/.cxx/cmake/debug/x86_64",
+  "originalCxxBuildFolder": "/home/theo/Desktop/Loomo_app_ADP/algo_app/.cxx/cmake/debug/x86_64",
   "variant": {
     "buildSystemArgumentList": [
       "-DCMAKE_BUILD_TYPE\u003dRelease",
@@ -118,12 +118,12 @@
         "ninjaExe": "/home/theo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja"
       },
       "cmakeToolchainFile": "/home/theo/Android/Sdk/ndk-bundle/build/cmake/android.toolchain.cmake",
-      "cxxFolder": "/home/theo/Desktop/loomo-algodev-master/algo_app/.cxx",
+      "cxxFolder": "/home/theo/Desktop/Loomo_app_ADP/algo_app/.cxx",
       "gradleModulePathName": ":algo_app",
-      "intermediatesFolder": "/home/theo/Desktop/loomo-algodev-master/algo_app/build/intermediates",
-      "makeFile": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/CMakeLists.txt",
-      "moduleBuildFile": "/home/theo/Desktop/loomo-algodev-master/algo_app/build.gradle",
-      "moduleRootFolder": "/home/theo/Desktop/loomo-algodev-master/algo_app",
+      "intermediatesFolder": "/home/theo/Desktop/Loomo_app_ADP/algo_app/build/intermediates",
+      "makeFile": "/home/theo/Desktop/Loomo_app_ADP/algo_app/src/main/jni/CMakeLists.txt",
+      "moduleBuildFile": "/home/theo/Desktop/Loomo_app_ADP/algo_app/build.gradle",
+      "moduleRootFolder": "/home/theo/Desktop/Loomo_app_ADP/algo_app",
       "ndkDefaultAbiList": [
         "ARMEABI_V7A",
         "ARM64_V8A",
@@ -187,12 +187,12 @@
       ],
       "ndkVersion": "22.1.7171670",
       "project": {
-        "compilerSettingsCacheFolder": "/home/theo/Desktop/loomo-algodev-master/.cxx",
-        "cxxFolder": "/home/theo/Desktop/loomo-algodev-master/.cxx",
+        "compilerSettingsCacheFolder": "/home/theo/Desktop/Loomo_app_ADP/.cxx",
+        "cxxFolder": "/home/theo/Desktop/Loomo_app_ADP/.cxx",
         "isBuildOnlyTargetAbiEnabled": true,
         "isCmakeBuildCohabitationEnabled": false,
         "isNativeCompilerSettingsCacheEnabled": false,
-        "rootBuildGradleFolder": "/home/theo/Desktop/loomo-algodev-master",
+        "rootBuildGradleFolder": "/home/theo/Desktop/Loomo_app_ADP",
         "sdkFolder": "/home/theo/Android/Sdk"
       },
       "splitsAbiFilterSet": [],
@@ -208,7 +208,7 @@
         "SYSTEM": {}
       }
     },
-    "objFolder": "/home/theo/Desktop/loomo-algodev-master/algo_app/build/intermediates/cmake/debug/obj",
+    "objFolder": "/home/theo/Desktop/Loomo_app_ADP/algo_app/build/intermediates/cmake/debug/obj",
     "variantName": "debug",
     "validAbiList": [
       "X86_64"

@@ -115,6 +115,40 @@ JNIEXPORT void JNICALL testAlgoStart(JNIEnv *env, jobject obj, jboolean isSim)
     mAlgoStarted = true;
 }
 
+#elif defined(APP_ADP)
+#include "AlgoADP.h"
+
+RawData *pAlgoMainRawData = NULL;
+adp_algo::AlgoADP* pAlgoMain = NULL;
+std::string app_name = "APP_ADP";
+
+JNIEXPORT void JNICALL testAlgoStart(JNIEnv *env, jobject obj, jboolean isSim)
+{
+    pAlgoMainRawData = new RawData();
+    RawData::StartSensors(isSim, "/sdcard/RawDataRec/tmp/");
+    pAlgoMainRawData->attachJVM();
+    pAlgoMain = new adp_algo::AlgoADP(pAlgoMainRawData, 100);
+    pAlgoMain->start();
+    mAlgoStarted = true;
+}
+
+#elif defined(APP_VITA_TESTING)
+#include "VITA_testing.h"
+
+RawData *pAlgoMainRawData = NULL;
+testing_algo::AlgoTesting* pAlgoMain = NULL;
+std::string app_name = "APP_TESTING";
+
+JNIEXPORT void JNICALL testAlgoStart(JNIEnv *env, jobject obj, jboolean isSim)
+{
+    pAlgoMainRawData = new RawData();
+    RawData::StartSensors(isSim, "/sdcard/RawDataRec/tmp/");
+    pAlgoMainRawData->attachJVM();
+    pAlgoMain = new testing_algo::AlgoTesting(pAlgoMainRawData, 100);
+    pAlgoMain->start();
+    mAlgoStarted = true;
+}
+
 #endif
 
 int camera_index = 2;
@@ -144,6 +178,10 @@ JNIEXPORT void JNICALL funcA(JNIEnv *env, jobject obj){
     if(pAlgoMain){
         pAlgoMain->switchHeadTracker();
     }
+#elif defined(APP_ADP)
+    if(pAlgoMain){
+        pAlgoMain->switchHeadTracker();
+    }
 #endif
 }
 
@@ -153,6 +191,10 @@ JNIEXPORT void JNICALL funcB(JNIEnv *env, jobject obj){
         pAlgoMain->startMotionTest();
     }
 #elif defined(APP_FOLLOW)
+    if(pAlgoMain){
+        pAlgoMain->switchVehicleTracker();
+    }
+#elif defined(APP_ADP)
     if(pAlgoMain){
         pAlgoMain->switchVehicleTracker();
     }
@@ -366,8 +408,13 @@ JNIEXPORT jstring JNICALL getDebugInfo(JNIEnv *env, jobject obj) {
         contents = contents + pAlgoMain->getDebugString();
 #elif (defined(APP_FOLLOW))
     if(pAlgoMain)
-        contents = contents + pAlgoMain->getDebugString();        
+        contents = contents + pAlgoMain->getDebugString();
+#elif (defined(APP_ADP))
+    if(pAlgoMain)
+        contents = contents + pAlgoMain->getDebugString();
 #endif
+
+
 
     return env->NewStringUTF(contents.c_str());
 }
@@ -422,6 +469,8 @@ JNIEXPORT jint JNICALL CameraConfigureType(JNIEnv *env, jobject obj) {
 #elif defined(APP_SOCKET)
     return USE_DEPTH | USE_FISHEYE;
 #elif defined(APP_FOLLOW)
+    return USE_DEPTH | USE_PLATFORMCAM;
+#elif defined(APP_ADP)
     return USE_DEPTH | USE_PLATFORMCAM;
 #else
     return USE_DEPTH | USE_FISHEYE;

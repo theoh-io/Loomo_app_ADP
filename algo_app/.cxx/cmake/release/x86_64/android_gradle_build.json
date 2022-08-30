@@ -1,7 +1,7 @@
 {
   "stringTable": {
     "0": "/home/theo/Desktop/loomo-algodev-master/algo_app/.cxx/cmake/release/x86_64",
-    "1": "--target=x86_64-none-linux-android22 --gcc-toolchain=/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DAPP_FOLLOW -DAlgo_EXPORTS -I/usr/include/x86_64-linux-android -isystem /home/theo/Desktop/loomo-algodev-master/dependency/3rdparty_android/opencv-3.4.0_shared/sdk/native/jni/include -isystem /home/theo/Desktop/loomo-algodev-master/dependency/3rdparty_android/opencv-3.4.0_shared/sdk/native/jni/include/opencv -I/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/core -I/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/../../../../dependency/3rdparty_android -I/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/../../../../dependency/algo_include/general -I/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/../../../../dependency/algo_include/tools/linear_math -I/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/../../../../dependency/algo_include/tools/impl -I/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/../../../../dependency/algobaseInclude/core -I/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/../../../../dependency/algobaseInclude/utils -I/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/../../../../dependency/algobaseInclude/interface -I/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/app_follow -std=c++11 -fexceptions -frtti -Wattributes -Werror=return-type -O2 -DNDEBUG -fPIC"
+    "1": "--target=x86_64-none-linux-android22 --gcc-toolchain=/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DAPP_ADP -DAlgo_EXPORTS -I/usr/include/x86_64-linux-android -isystem /home/theo/Desktop/loomo-algodev-master/dependency/3rdparty_android/opencv-3.4.0_shared/sdk/native/jni/include -isystem /home/theo/Desktop/loomo-algodev-master/dependency/3rdparty_android/opencv-3.4.0_shared/sdk/native/jni/include/opencv -I/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/core -I/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/../../../../dependency/3rdparty_android -I/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/../../../../dependency/algo_include/general -I/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/../../../../dependency/algo_include/tools/linear_math -I/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/../../../../dependency/algo_include/tools/impl -I/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/../../../../dependency/algobaseInclude/core -I/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/../../../../dependency/algobaseInclude/utils -I/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/../../../../dependency/algobaseInclude/interface -I/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/app_ADP -std=c++11 -fexceptions -frtti -Wattributes -Werror=return-type -O2 -DNDEBUG -fPIC"
   },
   "buildFiles": [
     "/home/theo/Android/Sdk/ndk-bundle/build/cmake/android.toolchain.cmake",
@@ -43,22 +43,22 @@
           "workingDirectoryOrdinal": 0
         },
         {
-          "src": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/app_follow/AlgoFollow.cpp",
+          "src": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/app_ADP/AlgoADP.cpp",
           "flagsOrdinal": 1,
           "workingDirectoryOrdinal": 0
         },
         {
-          "src": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/app_follow/SocketServer.cpp",
+          "src": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/app_ADP/SocketServer.cpp",
           "flagsOrdinal": 1,
           "workingDirectoryOrdinal": 0
         },
         {
-          "src": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/app_follow/PID.cpp",
+          "src": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/app_ADP/PID.cpp",
           "flagsOrdinal": 1,
           "workingDirectoryOrdinal": 0
         },
         {
-          "src": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/app_follow/DepthPreprocess.cpp",
+          "src": "/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/app_ADP/DepthPreprocess.cpp",
           "flagsOrdinal": 1,
           "workingDirectoryOrdinal": 0
         },

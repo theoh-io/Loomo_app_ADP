@@ -9,8 +9,9 @@ project(Algo)
 #set(APP_MODULE "LOCALMAPPING_TEST")
 #set(APP_MODULE "TENSORFLOW_SAMPLE")
 #set(APP_MODULE "SOCKET")
-set(APP_MODULE "FOLLOW")
+#set(APP_MODULE "FOLLOW")
 #set(APP_MODULE "VITA_TESTING")
+set(APP_MODULE "ADP")
 #set(APP_MODULE "TENSORFLOW_PERSON_DETECTOR")
 
 #####################################
@@ -103,6 +104,12 @@ if(USING_FOLLOW_MODULE)
     set(USE_LOCALMAPPING ON)
 #    set(USE_LIBREALSENSE ON)
 endif(USING_FOLLOW_MODULE)
+
+string(COMPARE EQUAL ${APP_MODULE} "ADP" USING_ADP_MODULE)
+if(USING_ADP_MODULE)
+    set(USE_LOCALMAPPING ON)
+    #    set(USE_LIBREALSENSE ON)
+endif(USING_ADP_MODULE)
 
 string(COMPARE EQUAL ${APP_MODULE} "VITA_TESTING" USING_VITA_TESTING_MODULE)
 if(USING_VITA_TESTING_MODULE)
@@ -262,6 +269,22 @@ if(USING_FOLLOW_MODULE)
         ${ALGO_BASE_DIR}/utils/AlgoUtils.cpp
     )
     add_definitions("-DAPP_FOLLOW")
+endif()
+
+#####################################
+#compile the app ADP
+#####################################
+if(USING_ADP_MODULE)
+    include_directories(${PROJECT_SOURCE_DIR}/app_ADP)
+    set(TARGET_FILES
+            ${GENERA_TAGET_FILES}
+            ${PROJECT_SOURCE_DIR}/app_ADP/AlgoADP.cpp
+            ${PROJECT_SOURCE_DIR}/app_ADP/SocketServer.cpp
+            ${PROJECT_SOURCE_DIR}/app_ADP/PID.cpp
+            ${PROJECT_SOURCE_DIR}/app_ADP/DepthPreprocess.cpp
+            ${ALGO_BASE_DIR}/utils/AlgoUtils.cpp
+            )
+    add_definitions("-DAPP_ADP")
 endif()
 
 #####################################

@@ -42,7 +42,7 @@ rule CXX_SHARED_LIBRARY_LINKER__Algo
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /home/theo/Android/Sdk/cmake/3.10.2.4988404/bin/cmake -H/home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni -B/home/theo/Desktop/loomo-algodev-master/algo_app/.cxx/cmake/debug/x86_64
+  command = /home/theo/Android/Sdk/cmake/3.10.2.4988404/bin/cmake -H/home/theo/Desktop/Loomo_app_ADP/algo_app/src/main/jni -B/home/theo/Desktop/Loomo_app_ADP/algo_app/.cxx/cmake/debug/x86_64
   description = Re-running CMake...
   generator = 1
 
