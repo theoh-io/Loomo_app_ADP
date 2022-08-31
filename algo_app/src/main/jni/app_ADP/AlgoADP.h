@@ -36,6 +36,8 @@ namespace ninebot_algo
 
             /*! Implement a complete flow of this algorithm, takes all inputs, run once, and output */
             virtual bool step();
+            virtual bool stepP();
+            virtual bool stepC();
 
             /*! Initialize current algorithm with configurable parameters */
             bool init();
@@ -63,7 +65,21 @@ namespace ninebot_algo
             void switchHeadTracker();
             void switchVehicleTracker();
 
+            void send_state();
+            void send_image();
+            void receive_bounding_boxes();
+            void send_positions();
+            void receive_control_cmd();
+            bool new_positions = false;
+            bool ready = false;
+            int info = 0;
+            float* bbox;
             float* ccmd;
+            int64_t m_timestamp_start;
+            std::chrono::time_point<std::chrono::steady_clock> start_time;
+
+
+
 
 
 
@@ -95,7 +111,6 @@ namespace ninebot_algo
             std::mutex mMutexTimer;
             float m_ptime;
             bool imgstream_en;
-            int64_t m_timestamp_start;
             SocketServer* m_p_server_control;
 			SocketServer* m_p_server_perception;
             SocketServer* m_p_server_perception_2;
@@ -104,7 +119,7 @@ namespace ninebot_algo
             SocketServer* m_p_server_prediction;
             SocketServer* m_p_server_perception_3;
 
-            SocketServer* m_p_server; //(true, true, 8081);
+            // SocketServer* m_p_server; //(true, true, 8081);
             void stepServer();
             std::string m_folder_socket;
             std::ofstream m_state_file;

@@ -1,0 +1,22 @@
+# ninja log v5
+26	723	1661862809	CMakeFiles/Algo.dir/app_ADP/PID.cpp.o	c02722db1370e76a
+0	2055	1661862811	CMakeFiles/Algo.dir/core/Entry.cpp.o	342f2810291b6805
+0	2316	1661862811	CMakeFiles/Algo.dir/core/Algo.cpp.o	3125e8fe39fa0335
+20	2561	1661862811	CMakeFiles/Algo.dir/app_ADP/SocketServer.cpp.o	b474ef6b5913c79d
+0	2577	1661862811	CMakeFiles/Algo.dir/app_ADP/DepthPreprocess.cpp.o	9ff35c159c936877
+1	3270	1661862812	CMakeFiles/Algo.dir/core/AlgoImpl.cpp.o	6bab8b62835b909c
+1	3982	1661862813	CMakeFiles/Algo.dir/app_ADP/AlgoADP.cpp.o	c0f205147d6f945e
+49	4086	1661862813	CMakeFiles/Algo.dir/home/theo/Desktop/Loomo_app_ADP/dependency/algobaseInclude/utils/AlgoUtils.cpp.o	2c1c817b83bcd567
+4086	4111	1661862813	/home/theo/Desktop/Loomo_app_ADP/algo_app/build/intermediates/cmake/debug/obj/x86_64/libAlgo.so	2c9bb1b566f825f
+3	4650	1661938363	CMakeFiles/Algo.dir/core/AlgoImpl.cpp.o	6bab8b62835b909c
+3	4209	1661938392	CMakeFiles/Algo.dir/app_ADP/AlgoADP.cpp.o	c0f205147d6f945e
+4209	4643	1661938392	/home/theo/Desktop/Loomo_app_ADP/algo_app/build/intermediates/cmake/debug/obj/x86_64/libAlgo.so	2c9bb1b566f825f
+1	2120	1661940242	CMakeFiles/Algo.dir/core/AlgoImpl.cpp.o	6bab8b62835b909c
+1	2546	1661940341	CMakeFiles/Algo.dir/app_ADP/AlgoADP.cpp.o	c0f205147d6f945e
+2546	2572	1661940341	/home/theo/Desktop/Loomo_app_ADP/algo_app/build/intermediates/cmake/debug/obj/x86_64/libAlgo.so	2c9bb1b566f825f
+2	2956	1661940711	CMakeFiles/Algo.dir/app_ADP/AlgoADP.cpp.o	c0f205147d6f945e
+2	4942	1661940756	CMakeFiles/Algo.dir/core/AlgoImpl.cpp.o	6bab8b62835b909c
+2	6455	1661940757	CMakeFiles/Algo.dir/app_ADP/AlgoADP.cpp.o	c0f205147d6f945e
+6455	6512	1661940757	/home/theo/Desktop/Loomo_app_ADP/algo_app/build/intermediates/cmake/debug/obj/x86_64/libAlgo.so	2c9bb1b566f825f
+3	4661	1661942585	CMakeFiles/Algo.dir/app_ADP/AlgoADP.cpp.o	c0f205147d6f945e
+4661	4697	1661942585	/home/theo/Desktop/Loomo_app_ADP/algo_app/build/intermediates/cmake/debug/obj/x86_64/libAlgo.so	2c9bb1b566f825f

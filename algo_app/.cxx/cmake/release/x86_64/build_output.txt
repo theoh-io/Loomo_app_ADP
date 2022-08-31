@@ -4,15 +4,138 @@ CMake Warning at /home/theo/Android/Sdk/ndk-bundle/build/cmake/android.toolchain
   values may be wrong or missing.  Update to CMake 3.19 or newer to use
   CMake's built-in compiler identification.
 Call Stack (most recent call first):
-  /home/theo/Desktop/loomo-algodev-master/algo_app/.cxx/cmake/release/x86_64/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)
+  /home/theo/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineSystem.cmake:94 (include)
   CMakeLists.txt:2 (project)
 
 
- SDK path is /home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/../../../..
- Dep path is /home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/../../../../dependency
-algo lib path is /home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/../../../../dependency/algo_lib
- algo include path is /home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/../../../../dependency/algo_include
- 3rdparty path is /home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni/../../../../dependency/3rdparty_android
+Check for working C compiler: /home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/clang
+CMake Warning at /home/theo/Android/Sdk/ndk-bundle/build/cmake/android.toolchain.cmake:449 (message):
+  An old version of CMake is being used that cannot automatically detect
+  compiler attributes.  Compiler identification is being bypassed.  Some
+  values may be wrong or missing.  Update to CMake 3.19 or newer to use
+  CMake's built-in compiler identification.
+Call Stack (most recent call first):
+  /home/theo/Desktop/Loomo_app_ADP/algo_app/.cxx/cmake/release/x86_64/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)
+  /home/theo/Desktop/Loomo_app_ADP/algo_app/.cxx/cmake/release/x86_64/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
+
+
+Check for working C compiler: /home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/clang -- works
+Detecting C compiler ABI info
+CMake Warning at /home/theo/Android/Sdk/ndk-bundle/build/cmake/android.toolchain.cmake:449 (message):
+  An old version of CMake is being used that cannot automatically detect
+  compiler attributes.  Compiler identification is being bypassed.  Some
+  values may be wrong or missing.  Update to CMake 3.19 or newer to use
+  CMake's built-in compiler identification.
+Call Stack (most recent call first):
+  /home/theo/Desktop/Loomo_app_ADP/algo_app/.cxx/cmake/release/x86_64/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)
+  /home/theo/Desktop/Loomo_app_ADP/algo_app/.cxx/cmake/release/x86_64/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
+
+
+Detecting C compiler ABI info - done
+Detecting C compile features
+CMake Warning at /home/theo/Android/Sdk/ndk-bundle/build/cmake/android.toolchain.cmake:449 (message):
+  An old version of CMake is being used that cannot automatically detect
+  compiler attributes.  Compiler identification is being bypassed.  Some
+  values may be wrong or missing.  Update to CMake 3.19 or newer to use
+  CMake's built-in compiler identification.
+Call Stack (most recent call first):
+  /home/theo/Desktop/Loomo_app_ADP/algo_app/.cxx/cmake/release/x86_64/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)
+  /home/theo/Desktop/Loomo_app_ADP/algo_app/.cxx/cmake/release/x86_64/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
+
+
+CMake Warning at /home/theo/Android/Sdk/ndk-bundle/build/cmake/android.toolchain.cmake:449 (message):
+  An old version of CMake is being used that cannot automatically detect
+  compiler attributes.  Compiler identification is being bypassed.  Some
+  values may be wrong or missing.  Update to CMake 3.19 or newer to use
+  CMake's built-in compiler identification.
+Call Stack (most recent call first):
+  /home/theo/Desktop/Loomo_app_ADP/algo_app/.cxx/cmake/release/x86_64/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)
+  /home/theo/Desktop/Loomo_app_ADP/algo_app/.cxx/cmake/release/x86_64/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
+
+
+CMake Warning at /home/theo/Android/Sdk/ndk-bundle/build/cmake/android.toolchain.cmake:449 (message):
+  An old version of CMake is being used that cannot automatically detect
+  compiler attributes.  Compiler identification is being bypassed.  Some
+  values may be wrong or missing.  Update to CMake 3.19 or newer to use
+  CMake's built-in compiler identification.
+Call Stack (most recent call first):
+  /home/theo/Desktop/Loomo_app_ADP/algo_app/.cxx/cmake/release/x86_64/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)
+  /home/theo/Desktop/Loomo_app_ADP/algo_app/.cxx/cmake/release/x86_64/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
+
+
+Detecting C compile features - done
+Check for working CXX compiler: /home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++
+CMake Warning at /home/theo/Android/Sdk/ndk-bundle/build/cmake/android.toolchain.cmake:449 (message):
+  An old version of CMake is being used that cannot automatically detect
+  compiler attributes.  Compiler identification is being bypassed.  Some
+  values may be wrong or missing.  Update to CMake 3.19 or newer to use
+  CMake's built-in compiler identification.
+Call Stack (most recent call first):
+  /home/theo/Desktop/Loomo_app_ADP/algo_app/.cxx/cmake/release/x86_64/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)
+  /home/theo/Desktop/Loomo_app_ADP/algo_app/.cxx/cmake/release/x86_64/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
+
+
+Check for working CXX compiler: /home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ -- works
+Detecting CXX compiler ABI info
+CMake Warning at /home/theo/Android/Sdk/ndk-bundle/build/cmake/android.toolchain.cmake:449 (message):
+  An old version of CMake is being used that cannot automatically detect
+  compiler attributes.  Compiler identification is being bypassed.  Some
+  values may be wrong or missing.  Update to CMake 3.19 or newer to use
+  CMake's built-in compiler identification.
+Call Stack (most recent call first):
+  /home/theo/Desktop/Loomo_app_ADP/algo_app/.cxx/cmake/release/x86_64/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)
+  /home/theo/Desktop/Loomo_app_ADP/algo_app/.cxx/cmake/release/x86_64/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
+
+
+Detecting CXX compiler ABI info - done
+Detecting CXX compile features
+CMake Warning at /home/theo/Android/Sdk/ndk-bundle/build/cmake/android.toolchain.cmake:449 (message):
+  An old version of CMake is being used that cannot automatically detect
+  compiler attributes.  Compiler identification is being bypassed.  Some
+  values may be wrong or missing.  Update to CMake 3.19 or newer to use
+  CMake's built-in compiler identification.
+Call Stack (most recent call first):
+  /home/theo/Desktop/Loomo_app_ADP/algo_app/.cxx/cmake/release/x86_64/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)
+  /home/theo/Desktop/Loomo_app_ADP/algo_app/.cxx/cmake/release/x86_64/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
+
+
+CMake Warning at /home/theo/Android/Sdk/ndk-bundle/build/cmake/android.toolchain.cmake:449 (message):
+  An old version of CMake is being used that cannot automatically detect
+  compiler attributes.  Compiler identification is being bypassed.  Some
+  values may be wrong or missing.  Update to CMake 3.19 or newer to use
+  CMake's built-in compiler identification.
+Call Stack (most recent call first):
+  /home/theo/Desktop/Loomo_app_ADP/algo_app/.cxx/cmake/release/x86_64/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)
+  /home/theo/Desktop/Loomo_app_ADP/algo_app/.cxx/cmake/release/x86_64/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
+
+
+CMake Warning at /home/theo/Android/Sdk/ndk-bundle/build/cmake/android.toolchain.cmake:449 (message):
+  An old version of CMake is being used that cannot automatically detect
+  compiler attributes.  Compiler identification is being bypassed.  Some
+  values may be wrong or missing.  Update to CMake 3.19 or newer to use
+  CMake's built-in compiler identification.
+Call Stack (most recent call first):
+  /home/theo/Desktop/Loomo_app_ADP/algo_app/.cxx/cmake/release/x86_64/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)
+  /home/theo/Desktop/Loomo_app_ADP/algo_app/.cxx/cmake/release/x86_64/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
+
+
+CMake Warning at /home/theo/Android/Sdk/ndk-bundle/build/cmake/android.toolchain.cmake:449 (message):
+  An old version of CMake is being used that cannot automatically detect
+  compiler attributes.  Compiler identification is being bypassed.  Some
+  values may be wrong or missing.  Update to CMake 3.19 or newer to use
+  CMake's built-in compiler identification.
+Call Stack (most recent call first):
+  /home/theo/Desktop/Loomo_app_ADP/algo_app/.cxx/cmake/release/x86_64/CMakeFiles/3.10.2/CMakeSystem.cmake:6 (include)
+  /home/theo/Desktop/Loomo_app_ADP/algo_app/.cxx/cmake/release/x86_64/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
+
+
+Detecting CXX compile features - done
+ SDK path is /home/theo/Desktop/Loomo_app_ADP/algo_app/src/main/jni/../../../..
+ Dep path is /home/theo/Desktop/Loomo_app_ADP/algo_app/src/main/jni/../../../../dependency
+algo lib path is /home/theo/Desktop/Loomo_app_ADP/algo_app/src/main/jni/../../../../dependency/algo_lib
+ algo include path is /home/theo/Desktop/Loomo_app_ADP/algo_app/src/main/jni/../../../../dependency/algo_include
+ 3rdparty path is /home/theo/Desktop/Loomo_app_ADP/algo_app/src/main/jni/../../../../dependency/3rdparty_android
+Found OpenCV: /home/theo/Desktop/Loomo_app_ADP/dependency/3rdparty_android/opencv-3.4.0_shared (found version "3.4.0") 
 LINK_LIBRARIES_LIST: AlgoBase;RealSense;local_mapping
 the lib list is 
 Configuring done

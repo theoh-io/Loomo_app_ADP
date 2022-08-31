@@ -197,7 +197,7 @@ namespace ninebot_algo
         bool AlgoADP::step()
         {
             /*! Get start timestamp for calculating algorithm runtime */
-            auto start = std::chrono::high_resolution_clock::now();
+            auto start_time = std::chrono::high_resolution_clock::now();
 
             if(!m_is_init_succed){
                 ALOGD("AlgoADP: init false");
@@ -247,15 +247,6 @@ namespace ninebot_algo
                 setDisplayData();
             }
 
-            /*! Calculate the algorithm runtime */
-            auto end = std::chrono::high_resolution_clock::now();
-            std::chrono::duration<double, std::milli> elapsed = end-start;
-            ALOGD("step time: %f",elapsed.count());
-            {
-                std::lock_guard<std::mutex> lock(mMutexTimer);
-                m_ptime = elapsed.count()*0.5 + m_ptime*0.5;
-            }
-
             return true;
         }
 
@@ -265,43 +256,168 @@ namespace ninebot_algo
             // mRawDataInterface->retrieveDS4Color(raw_colords4, true);
             mRawDataInterface->retrieveColor(raw_color, true);
 
-            ALOGD("raw_color: (%lld,%d,%d,%d)", raw_color.timestampSys, raw_color.image.cols, raw_color.image.rows, raw_color.image.channels());
+            ALOGD("raw_color: (%lld,%d,%d,%d)", raw_color.timestampSys, raw_color.image.cols,
+                  raw_color.image.rows, raw_color.image.channels());
 
             if (raw_color.image.empty()) {
                 ALOGW("empty raw_color image");
-                mRawDataInterface->ExecuteCmd(0.0f, 0.0f, mRawDataInterface->getCurrentTimestampSys());
+                mRawDataInterface->ExecuteCmd(0.0f, 0.0f,
+                                              mRawDataInterface->getCurrentTimestampSys());
+                ready = false;
                 return;
             }
 
             if (m_p_server_control->isStopped()) {
-                mRawDataInterface->ExecuteCmd(0.0f, 0.0f, mRawDataInterface->getCurrentTimestampSys());
+                mRawDataInterface->ExecuteCmd(0.0f, 0.0f,
+                                              mRawDataInterface->getCurrentTimestampSys());
                 ALOGW("server stopped");
                 return;
             }
 
             if (!m_p_server_control->isConnected()) {
-                mRawDataInterface->ExecuteCmd(0.0f, 0.0f, mRawDataInterface->getCurrentTimestampSys());
+                mRawDataInterface->ExecuteCmd(0.0f, 0.0f,
+                                              mRawDataInterface->getCurrentTimestampSys());
                 ALOGW("server disconnected");
-                mRawDataInterface->ExecuteHeadMode(0);
-                mRawDataInterface->ExecuteHeadPos(-0.7, 0.0 , 0);
-                return;
-            }
-
-            //send image
-            cv::Mat image_send;
-            cv::resize(raw_color.image, image_send, cv::Size(640/m_down_scale, 480/m_down_scale));
-            int info_send_image = m_p_server_perception->sendImage(image_send, 640/m_down_scale, 480/m_down_scale);
-            if (info_send_image < 0) {
-                ALOGW("server send image failed");
                 mRawDataInterface->ExecuteHeadMode(0);
                 mRawDataInterface->ExecuteHeadPos(-0.7, 0.0, 0);
                 return;
             }
-            else {
-                ALOGW("server send image succeeded");
+
+            //this->send_image();
+            // Send image to perception
+            cv::Mat image_send;
+            cv::resize(raw_color.image, image_send, cv::Size(640/m_down_scale, 480/m_down_scale));
+            int info_send_image = m_p_server_perception->sendImage(image_send, 640/m_down_scale, 480/m_down_scale);
+            if (info_send_image < 0)
+            {
+                ALOGD("Image not sent");
+            }
+            else{
+                ALOGD("Image sent");
+            }
+            ALOGD("After send image");
+
+
+            // this->send_state();
+            //send state
+            // Send the state of the Loomo {x,y,heading,vx,w,ax,ay}
+            float* states = new float[5];
+            mRawDataInterface->retrieveOdometry(raw_odometry, -1);
+            states[0] = float(raw_odometry.twist.pose.x);
+            states[1] = float(raw_odometry.twist.pose.y);
+            states[2] = float(raw_odometry.twist.pose.orientation);
+            states[3] = raw_odometry.twist.velocity.linear_velocity;
+            states[4] = raw_odometry.twist.velocity.angular_velocity;
+
+            int info_send_state = m_p_server_estimation->sendFloats(states, 5);
+            if (info_send_state < 0)
+            {
+                ALOGD("state not sent");
+            }
+            else{
+                ALOGD("state sent");
+            }
+            delete[] states;
+
+            ALOGD("After send state");
+
+            ready = true;
+            ALOGD("ready is True");
+
+
+            if (control_cmd[0] < 2.0 && control_cmd[1] > -2.0) {
+                this->trackVehicle(control_cmd[0], control_cmd[1]);
+            }
+            ALOGD("Track Vehicle");
+            // ALOGD("Vehicle Target: target_distance = %f, target_theta_wrt_head = %f", m_target_distance, target_theta_wrt_head);
+
+            if (new_positions) {
+                this->send_positions();
+                new_positions = false;
+                ALOGD("Send Pos");
             }
 
-            //send state
+            return;
+        }
+
+        bool AlgoADP::stepP()
+        {
+            /*! Get start timestamp for calculating algorithm runtime */
+
+            if(!m_is_init_succed){
+                ALOGD("AlgoTesting: init false");
+                return false;
+            }
+
+            if (m_p_server_control->isStopped())
+            {
+                return true;
+            }
+
+            if (!m_p_server_control->isConnected()) {
+                return true;
+            }
+
+            if (ready) {
+                this->receive_bounding_boxes();
+                new_positions = true;
+                ALOGD("received bbox => new pos is true");
+
+            }
+
+            return true;
+        }
+
+        bool AlgoADP::stepC()
+        {
+            /*! Get start timestamp for calculating algorithm runtime */
+            //auto start = std::chrono::high_resolution_clock::now();
+
+            if(!m_is_init_succed){
+                ALOGD("AlgoTesting: init false");
+                return false;
+            }
+
+            if (m_p_server_control->isStopped())
+            {
+                return true;
+            }
+
+            if (!m_p_server_control->isConnected()) {
+                return true;
+            }
+
+            if (ready) {
+                this->receive_control_cmd();
+                ALOGD("recvd ctrl cmd");
+            }
+
+            /*! Calculate the algorithm runtime */
+            auto end = std::chrono::high_resolution_clock::now();
+            std::chrono::duration<double, std::milli> elapsed = end-start_time;
+            printf("step time: %f",elapsed.count());
+            {
+                std::lock_guard<std::mutex> lock(mMutexTimer);
+                m_ptime = elapsed.count()*0.5 + m_ptime*0.5;
+            }
+
+            return true;
+        }
+        /*
+        void AlgoADP::send_image()
+        {
+            // Send image to perception
+            cv::Mat image_send;
+            cv::resize(raw_color.image, image_send, cv::Size(640/m_down_scale, 480/m_down_scale));
+            int info_send_image = m_p_server_perception->sendImage(image_send, 640/m_down_scale, 480/m_down_scale);
+            if (info_send_image < 0)
+            {
+                ALOGD("Image not sent");
+            }
+        }
+
+        void AlgoADP::send_state()
+        {
             // Send the state of the Loomo {x,y,heading,vx,w,ax,ay}
             float* states = new float[5];
             mRawDataInterface->retrieveOdometry(raw_odometry, -1);
@@ -314,50 +430,91 @@ namespace ninebot_algo
             int info_send_state = m_p_server_estimation->sendFloats(states, 5);
 
             delete[] states;
+        }
+         */
 
-            // Receive Bounding Box coordinates (5 floats)
+        void AlgoADP::receive_bounding_boxes()
+        {
+            // Receive Bounding Box coordinates from perception (5 floats)
             float* floats_recv = new float[25];
             int rcv_info_test = m_p_server_perception_2->recvFloats(floats_recv, 25);
-            if (rcv_info_test < 0) {
+            bbox = floats_recv;
+            info = rcv_info_test;
+            delete[] floats_recv;
+        }
+
+        void AlgoADP::send_positions(){
+
+            float* position_obj = new float[10];
+
+            if (info < 0)
+            {
                 ALOGD("server rcv float failed");
                 return;
             }
-            // else {
-            //     for (int i = 0; i < 5; i++)
-            //     {
-            //         bounding_box[i] = *(float*)&floats_recv[i];
-            //         ALOGD("server bounding_box #%d: %.2f", i, bounding_box[i]);
-            //     }
-            // }
-            bounding_box = floats_recv;
-            delete[] floats_recv;
 
-
-            //send positions
-            m_roi_color.width = int(bounding_box[2] * m_down_scale);
-            m_roi_color.height = int(bounding_box[3] * m_down_scale);
-            m_roi_color.x = (bounding_box[0] - 320/m_down_scale) * m_down_scale + 320;
-            m_roi_color.y = (bounding_box[1] - 240/m_down_scale) * m_down_scale + 240;
-            // convert from center to top-left corner
-            // m_roi_color.x = int(m_roi_color.x - m_roi_color.width/2);
-            // m_roi_color.y = int(m_roi_color.y - m_roi_color.height/2);
-
-            if (bounding_box[4] > 0.5)
-                m_is_detected = true;
             else
+            {
                 m_is_detected = false;
 
-            float target_theta_wrt_head =0.0f;
-            if (m_is_detected) {
-                ExtractTarget(m_target_distance, target_theta_wrt_head);
-                m_target_theta = target_theta_wrt_head + raw_headpos.yaw;
+                for (int i = 0; i < 5; i++)
+                {
+                    bounding_box[0] = *(float*)&bbox[5*i];
+                    bounding_box[1] = *(float*)&bbox[(5*i+1)];
+                    bounding_box[2] = *(float*)&bbox[(5*i+2)];
+                    bounding_box[3] = *(float*)&bbox[(5*i+3)];
+                    bounding_box[4] = *(float*)&bbox[(5*i+4)];
+
+                    ALOGD("server bounding_box #%d: %.2f", i, bounding_box);
+
+                    float target_theta_wrt_head =0.0f;
+
+                    if (bounding_box[4] > 0.5)
+                    {
+                        m_is_detected = true;
+                        m_roi_color.width = int(bounding_box[2] * m_down_scale);
+                        m_roi_color.height = int(bounding_box[3] * m_down_scale);
+                        m_roi_color.x = int(bounding_box[0] * m_down_scale);
+                        m_roi_color.y = int(bounding_box[1] * m_down_scale);
+
+                        // convert from center to top-left corner
+                        // m_roi_color_act.width = m_roi_color.width;
+                        // m_roi_color_act.height = m_roi_color.height;
+                        // m_roi_color_act.x = m_roi_color.x - m_roi_color.width/2;
+                        // m_roi_color_act.y = m_roi_color.y - m_roi_color.height/2;
+
+
+                        ExtractTarget(m_target_distance, target_theta_wrt_head);
+                        m_target_theta = target_theta_wrt_head + raw_headpos.yaw;
+                        // m_target_distance_act = m_target_distance;
+                        // m_target_theta_act = m_target_theta;
+                    }
+
+                    else
+                    {
+                        m_target_distance = 0.0f;
+                        m_target_theta = 0.0f;
+                        target_theta_wrt_head = 0.0f;
+                    }
+
+                    position_obj[(2*i)+0] = m_target_distance * cos(m_target_theta);
+                    position_obj[(2*i)+1] = m_target_distance * sin(m_target_theta);
+
+                }
+
+                int info_send_perception = m_p_server_prediction->sendFloats(position_obj, 10);
+                int info_send_mapping = m_p_server_mapping->sendFloats(position_obj, 10);
+
+                this->trackHead(m_target_theta);
+
+
+                delete[] position_obj;
+                return;
             }
-            else {
-                m_target_distance = 0.0f;
-                m_target_theta = 0.0f;
-                target_theta_wrt_head = 0.0f;
-            }
-            
+        }
+
+        void AlgoADP::receive_control_cmd()
+        {
             // Receive Control commands (2 floats)
             float* floats_recv_control = new float[2];
             int rcv_info_test_control = m_p_server_control->recvFloats(floats_recv_control, 2);
@@ -377,25 +534,9 @@ namespace ninebot_algo
             {
                 control_cmd[0] = *(float*)&ccmd[0];
                 control_cmd[1] = *(float*)&ccmd[1];
-            }
-        
-            // send control cmds
-            this->trackHead(m_target_theta);
-            this->trackVehicle(control_cmd[0], control_cmd[1]);
-            // ALOGD("Vehicle Target: target_distance = %f, target_theta_wrt_head = %f", m_target_distance, target_theta_wrt_head);
 
-            // send positions: distance to prediction and mapping
-            float* position_obj = new float[10];
-            position_obj[0] = m_target_distance * cos(m_target_theta);
-            position_obj[1] = m_target_distance * sin(m_target_theta);
-            for (int i=2; i<10; i++)
-            {
-                position_obj[i]=0.0;
+                return;
             }
-            int info_send_perception = m_p_server_prediction->sendFloats(position_obj, 10);
-            int info_send_mapping = m_p_server_mapping->sendFloats(position_obj, 10);
-            delete[] position_obj;
-            return;
         }
 
         void AlgoADP::switchHeadTracker() {

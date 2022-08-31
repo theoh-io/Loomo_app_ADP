@@ -1,3 +1,3 @@
-/home/theo/Desktop/loomo-algodev-master/algo_app/.cxx/cmake/release/x86_64/CMakeFiles/rebuild_cache.dir
-/home/theo/Desktop/loomo-algodev-master/algo_app/.cxx/cmake/release/x86_64/CMakeFiles/edit_cache.dir
-/home/theo/Desktop/loomo-algodev-master/algo_app/.cxx/cmake/release/x86_64/CMakeFiles/Algo.dir
+/home/theo/Desktop/Loomo_app_ADP/algo_app/.cxx/cmake/release/x86_64/CMakeFiles/rebuild_cache.dir
+/home/theo/Desktop/Loomo_app_ADP/algo_app/.cxx/cmake/release/x86_64/CMakeFiles/edit_cache.dir
+/home/theo/Desktop/Loomo_app_ADP/algo_app/.cxx/cmake/release/x86_64/CMakeFiles/Algo.dir
