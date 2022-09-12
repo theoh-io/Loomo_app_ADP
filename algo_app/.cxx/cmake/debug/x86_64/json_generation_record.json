@@ -19,6 +19,168 @@
   },
   {
     "level": "INFO",
+    "message": "Parsing /home/theo/Android/Sdk/build-tools/26.0.2/package.xml",
+    "file": "/home/theo/Desktop/Loomo_app_ADP/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "debug|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing /home/theo/Android/Sdk/build-tools/28.0.3/package.xml",
+    "file": "/home/theo/Desktop/Loomo_app_ADP/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "debug|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing /home/theo/Android/Sdk/build-tools/30.0.3/package.xml",
+    "file": "/home/theo/Desktop/Loomo_app_ADP/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "debug|x86_64"
+  },
+  {
+    "level": "WARN",
+    "message": "Mapping new ns http://schemas.android.com/repository/android/common/02 to old ns http://schemas.android.com/repository/android/common/01",
+    "file": "/home/theo/Desktop/Loomo_app_ADP/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "debug|x86_64"
+  },
+  {
+    "level": "WARN",
+    "message": "Mapping new ns http://schemas.android.com/repository/android/generic/02 to old ns http://schemas.android.com/repository/android/generic/01",
+    "file": "/home/theo/Desktop/Loomo_app_ADP/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "debug|x86_64"
+  },
+  {
+    "level": "WARN",
+    "message": "Mapping new ns http://schemas.android.com/sdk/android/repo/addon2/02 to old ns http://schemas.android.com/sdk/android/repo/addon2/01",
+    "file": "/home/theo/Desktop/Loomo_app_ADP/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "debug|x86_64"
+  },
+  {
+    "level": "WARN",
+    "message": "Mapping new ns http://schemas.android.com/sdk/android/repo/addon2/03 to old ns http://schemas.android.com/sdk/android/repo/addon2/01",
+    "file": "/home/theo/Desktop/Loomo_app_ADP/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "debug|x86_64"
+  },
+  {
+    "level": "WARN",
+    "message": "Mapping new ns http://schemas.android.com/sdk/android/repo/repository2/02 to old ns http://schemas.android.com/sdk/android/repo/repository2/01",
+    "file": "/home/theo/Desktop/Loomo_app_ADP/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "debug|x86_64"
+  },
+  {
+    "level": "WARN",
+    "message": "Mapping new ns http://schemas.android.com/sdk/android/repo/repository2/03 to old ns http://schemas.android.com/sdk/android/repo/repository2/01",
+    "file": "/home/theo/Desktop/Loomo_app_ADP/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "debug|x86_64"
+  },
+  {
+    "level": "WARN",
+    "message": "Mapping new ns http://schemas.android.com/sdk/android/repo/sys-img2/03 to old ns http://schemas.android.com/sdk/android/repo/sys-img2/01",
+    "file": "/home/theo/Desktop/Loomo_app_ADP/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "debug|x86_64"
+  },
+  {
+    "level": "WARN",
+    "message": "Mapping new ns http://schemas.android.com/sdk/android/repo/sys-img2/02 to old ns http://schemas.android.com/sdk/android/repo/sys-img2/01",
+    "file": "/home/theo/Desktop/Loomo_app_ADP/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "debug|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing /home/theo/Android/Sdk/build-tools/32.0.0/package.xml",
+    "file": "/home/theo/Desktop/Loomo_app_ADP/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "debug|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing /home/theo/Android/Sdk/build-tools/32.1.0-rc1/package.xml",
+    "file": "/home/theo/Desktop/Loomo_app_ADP/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "debug|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing /home/theo/Android/Sdk/cmake/3.10.2.4988404/package.xml",
+    "file": "/home/theo/Desktop/Loomo_app_ADP/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "debug|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing /home/theo/Android/Sdk/cmake/3.18.1/package.xml",
+    "file": "/home/theo/Desktop/Loomo_app_ADP/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "debug|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing /home/theo/Android/Sdk/emulator/package.xml",
+    "file": "/home/theo/Desktop/Loomo_app_ADP/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "debug|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing /home/theo/Android/Sdk/extras/android/m2repository/package.xml",
+    "file": "/home/theo/Desktop/Loomo_app_ADP/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "debug|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing /home/theo/Android/Sdk/extras/google/m2repository/package.xml",
+    "file": "/home/theo/Desktop/Loomo_app_ADP/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "debug|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing /home/theo/Android/Sdk/ndk-bundle/package.xml",
+    "file": "/home/theo/Desktop/Loomo_app_ADP/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "debug|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing /home/theo/Android/Sdk/ndk/25.1.8937393/package.xml",
+    "file": "/home/theo/Desktop/Loomo_app_ADP/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "debug|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing /home/theo/Android/Sdk/patcher/v4/package.xml",
+    "file": "/home/theo/Desktop/Loomo_app_ADP/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "debug|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing /home/theo/Android/Sdk/platform-tools/package.xml",
+    "file": "/home/theo/Desktop/Loomo_app_ADP/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "debug|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing /home/theo/Android/Sdk/platforms/android-22/package.xml",
+    "file": "/home/theo/Desktop/Loomo_app_ADP/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "debug|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing /home/theo/Android/Sdk/platforms/android-26/package.xml",
+    "file": "/home/theo/Desktop/Loomo_app_ADP/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "debug|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing /home/theo/Android/Sdk/platforms/android-32/package.xml",
+    "file": "/home/theo/Desktop/Loomo_app_ADP/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "debug|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing /home/theo/Android/Sdk/sources/android-22/package.xml",
+    "file": "/home/theo/Desktop/Loomo_app_ADP/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "debug|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing /home/theo/Android/Sdk/tools/package.xml",
+    "file": "/home/theo/Desktop/Loomo_app_ADP/algo_app/src/main/jni/CMakeLists.txt",
+    "tag": "debug|x86_64"
+  },
+  {
+    "level": "INFO",
     "message": "- CMake found in SDK at \u0027/home/theo/Android/Sdk/cmake/3.10.2.4988404\u0027 had version \u00273.10.2\u0027",
     "file": "/home/theo/Desktop/Loomo_app_ADP/algo_app/src/main/jni/CMakeLists.txt",
     "tag": "debug|x86_64"

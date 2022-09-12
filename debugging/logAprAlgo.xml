@@ -1,0 +1,30 @@
+<!-- Set level >=8 or <=0 to disable logging, set it larger numbers to log only higher level messages.
+ E.g., set level as 3 to log for both debug and warn messages, set ot as 5 to only log warnings.
+ The corresponding enumerate log levels for these numbers are given below:
+	ANDROID_LOG_UNKNOWN = 	0,
+    ANDROID_LOG_DEFAULT, 	1
+    ANDROID_LOG_VERBOSE,  	2
+    ANDROID_LOG_DEBUG,  	3
+    ANDROID_LOG_INFO,  		4
+    ANDROID_LOG_WARN,  		5
+    ANDROID_LOG_ERROR,  	6
+    ANDROID_LOG_FATAL,		7
+	ANDROID_LOG_SILENT,		8
+	
+	File name to record log, if no such item, then no file is recorded
+	<LOG_FILENAME>/sdcard/uwb_slam/log.txt</LOG_FILENAME>
+	
+	Only to show logs with spcified tag filter (ANDROID_LOG_WARN, ANDROID_LOG_ERROR will not be filtered).
+	If using ALOGTAGD, tag can be specified; If using ALOGD, AprAlgo is the default tag.
+	If no such item, then no filter is applied
+	<TAG_FILTER>AprAlgo</TAG_FILTER>
+	
+	In each application, you can redefine DEFAULT_LOG_TAG, so that ALOGD can still be used with alternative log tag, e.g.,
+	#undef DEFAULT_LOG_TAG
+	#define DEFAULT_LOG_TAG "LocalMapping"
+-->
+
+<root>
+    <LEVEL>3</LEVEL>
+    <LOG_FILENAME>/sdcard/log.txt</LOG_FILENAME>
+</root>
