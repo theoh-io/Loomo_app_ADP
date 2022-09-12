@@ -3,17 +3,17 @@ The host system is: Linux - 5.15.0-46-generic - x86_64
 Determining if the C compiler works passed with the following output:
 Change Dir: /home/theo/Desktop/Loomo_app_ADP/algo_app/.cxx/cmake/debug/x86_64/CMakeFiles/CMakeTmp
 
-Run Build Command:"/home/theo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_2a38c"
-[1/2] Building C object CMakeFiles/cmTC_2a38c.dir/testCCompiler.c.o
-[2/2] Linking C executable cmTC_2a38c
+Run Build Command:"/home/theo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_f321f"
+[1/2] Building C object CMakeFiles/cmTC_f321f.dir/testCCompiler.c.o
+[2/2] Linking C executable cmTC_f321f
 
 
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: /home/theo/Desktop/Loomo_app_ADP/algo_app/.cxx/cmake/debug/x86_64/CMakeFiles/CMakeTmp
 
-Run Build Command:"/home/theo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_57f7b"
-[1/2] Building C object CMakeFiles/cmTC_57f7b.dir/CMakeCCompilerABI.c.o
-[2/2] Linking C executable cmTC_57f7b
+Run Build Command:"/home/theo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_cb66f"
+[1/2] Building C object CMakeFiles/cmTC_cb66f.dir/CMakeCCompilerABI.c.o
+[2/2] Linking C executable cmTC_cb66f
 Android (7155654, based on r399163b1) clang version 11.0.5 (https://android.googlesource.com/toolchain/llvm-project 87f1315dfbea7c137aa2e6d362dbb457e388158d)
 Target: x86_64-none-linux-android22
 Thread model: posix
@@ -23,16 +23,16 @@ Found candidate GCC installation: /home/theo/Android/Sdk/ndk-bundle/toolchains/l
 Selected GCC installation: /home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/x86_64-linux-android/4.9.x
 Candidate multilib: .;@m64
 Selected multilib: .;@m64
- "/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/ld" --sysroot=/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -pie -z noexecstack --warn-shared-textrel -z now -z relro --hash-style=gnu --hash-style=both --enable-new-dtags --eh-frame-hdr -m elf_x86_64 -dynamic-linker /system/bin/linker64 -o cmTC_57f7b /home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/x86_64-linux-android/22/crtbegin_dynamic.o -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/11.0.5/lib/linux/x86_64 -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/x86_64-linux-android/4.9.x -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/x86_64-linux-android/4.9.x/../../../../x86_64-linux-android/lib/../lib64 -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/x86_64-linux-android/22 -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/x86_64-linux-android -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/x86_64-linux-android/4.9.x/../../../../x86_64-linux-android/lib -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libgcc_real.a --exclude-libs libatomic.a --build-id=sha1 --no-rosegment --fatal-warnings --no-undefined --gc-sections CMakeFiles/cmTC_57f7b.dir/CMakeCCompilerABI.c.o -lgcc -ldl -lc -lgcc -ldl /home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/x86_64-linux-android/22/crtend_android.o
+ "/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/ld" --sysroot=/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -pie -z noexecstack --warn-shared-textrel -z now -z relro --hash-style=gnu --hash-style=both --enable-new-dtags --eh-frame-hdr -m elf_x86_64 -dynamic-linker /system/bin/linker64 -o cmTC_cb66f /home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/x86_64-linux-android/22/crtbegin_dynamic.o -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/11.0.5/lib/linux/x86_64 -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/x86_64-linux-android/4.9.x -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/x86_64-linux-android/4.9.x/../../../../x86_64-linux-android/lib/../lib64 -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/x86_64-linux-android/22 -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/x86_64-linux-android -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/x86_64-linux-android/4.9.x/../../../../x86_64-linux-android/lib -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libgcc_real.a --exclude-libs libatomic.a --build-id=sha1 --no-rosegment --fatal-warnings --no-undefined --gc-sections CMakeFiles/cmTC_cb66f.dir/CMakeCCompilerABI.c.o -lgcc -ldl -lc -lgcc -ldl /home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/x86_64-linux-android/22/crtend_android.o
 
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(CMAKE_LINKER-NOTFOUND|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/theo/Desktop/Loomo_app_ADP/algo_app/.cxx/cmake/debug/x86_64/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/home/theo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_57f7b"]
-  ignore line: [[1/2] Building C object CMakeFiles/cmTC_57f7b.dir/CMakeCCompilerABI.c.o]
-  ignore line: [[2/2] Linking C executable cmTC_57f7b]
+  ignore line: [Run Build Command:"/home/theo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_cb66f"]
+  ignore line: [[1/2] Building C object CMakeFiles/cmTC_cb66f.dir/CMakeCCompilerABI.c.o]
+  ignore line: [[2/2] Linking C executable cmTC_cb66f]
   ignore line: [Android (7155654, based on r399163b1) clang version 11.0.5 (https://android.googlesource.com/toolchain/llvm-project 87f1315dfbea7c137aa2e6d362dbb457e388158d)]
   ignore line: [Target: x86_64-none-linux-android22]
   ignore line: [Thread model: posix]
@@ -44,7 +44,7 @@ Parsed C implicit link information from above output:
   ignore line: [@m64]
   ignore line: [Selected multilib: .]
   ignore line: [@m64]
-  link line: [ "/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/ld" --sysroot=/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -pie -z noexecstack --warn-shared-textrel -z now -z relro --hash-style=gnu --hash-style=both --enable-new-dtags --eh-frame-hdr -m elf_x86_64 -dynamic-linker /system/bin/linker64 -o cmTC_57f7b /home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/x86_64-linux-android/22/crtbegin_dynamic.o -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/11.0.5/lib/linux/x86_64 -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/x86_64-linux-android/4.9.x -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/x86_64-linux-android/4.9.x/../../../../x86_64-linux-android/lib/../lib64 -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/x86_64-linux-android/22 -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/x86_64-linux-android -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/x86_64-linux-android/4.9.x/../../../../x86_64-linux-android/lib -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libgcc_real.a --exclude-libs libatomic.a --build-id=sha1 --no-rosegment --fatal-warnings --no-undefined --gc-sections CMakeFiles/cmTC_57f7b.dir/CMakeCCompilerABI.c.o -lgcc -ldl -lc -lgcc -ldl /home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/x86_64-linux-android/22/crtend_android.o]
+  link line: [ "/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/ld" --sysroot=/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -pie -z noexecstack --warn-shared-textrel -z now -z relro --hash-style=gnu --hash-style=both --enable-new-dtags --eh-frame-hdr -m elf_x86_64 -dynamic-linker /system/bin/linker64 -o cmTC_cb66f /home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/x86_64-linux-android/22/crtbegin_dynamic.o -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/11.0.5/lib/linux/x86_64 -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/x86_64-linux-android/4.9.x -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/x86_64-linux-android/4.9.x/../../../../x86_64-linux-android/lib/../lib64 -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/x86_64-linux-android/22 -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/x86_64-linux-android -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/x86_64-linux-android/4.9.x/../../../../x86_64-linux-android/lib -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libgcc_real.a --exclude-libs libatomic.a --build-id=sha1 --no-rosegment --fatal-warnings --no-undefined --gc-sections CMakeFiles/cmTC_cb66f.dir/CMakeCCompilerABI.c.o -lgcc -ldl -lc -lgcc -ldl /home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/x86_64-linux-android/22/crtend_android.o]
     arg [/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/ld] ==> ignore
     arg [--sysroot=/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot] ==> ignore
     arg [-pie] ==> ignore
@@ -61,7 +61,7 @@ Parsed C implicit link information from above output:
     arg [-dynamic-linker] ==> ignore
     arg [/system/bin/linker64] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_57f7b] ==> ignore
+    arg [cmTC_cb66f] ==> ignore
     arg [/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/x86_64-linux-android/22/crtbegin_dynamic.o] ==> ignore
     arg [-L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/11.0.5/lib/linux/x86_64] ==> dir [/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/11.0.5/lib/linux/x86_64]
     arg [-L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/x86_64-linux-android/4.9.x] ==> dir [/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/x86_64-linux-android/4.9.x]
@@ -81,7 +81,7 @@ Parsed C implicit link information from above output:
     arg [--fatal-warnings] ==> ignore
     arg [--no-undefined] ==> ignore
     arg [--gc-sections] ==> ignore
-    arg [CMakeFiles/cmTC_57f7b.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_cb66f.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [-ldl] ==> lib [dl]
     arg [-lc] ==> lib [c]
@@ -105,9 +105,9 @@ Parsed C implicit link information from above output:
 Detecting C [-std=c11] compiler features compiled with the following output:
 Change Dir: /home/theo/Desktop/Loomo_app_ADP/algo_app/.cxx/cmake/debug/x86_64/CMakeFiles/CMakeTmp
 
-Run Build Command:"/home/theo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_d0ab4"
-[1/2] Building C object CMakeFiles/cmTC_d0ab4.dir/feature_tests.c.o
-[2/2] Linking C executable cmTC_d0ab4
+Run Build Command:"/home/theo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_3af7d"
+[1/2] Building C object CMakeFiles/cmTC_3af7d.dir/feature_tests.c.o
+[2/2] Linking C executable cmTC_3af7d
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -119,9 +119,9 @@ Run Build Command:"/home/theo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_
 Detecting C [-std=c99] compiler features compiled with the following output:
 Change Dir: /home/theo/Desktop/Loomo_app_ADP/algo_app/.cxx/cmake/debug/x86_64/CMakeFiles/CMakeTmp
 
-Run Build Command:"/home/theo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_77479"
-[1/2] Building C object CMakeFiles/cmTC_77479.dir/feature_tests.c.o
-[2/2] Linking C executable cmTC_77479
+Run Build Command:"/home/theo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_8f3ff"
+[1/2] Building C object CMakeFiles/cmTC_8f3ff.dir/feature_tests.c.o
+[2/2] Linking C executable cmTC_8f3ff
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -133,9 +133,9 @@ Run Build Command:"/home/theo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_
 Detecting C [-std=c90] compiler features compiled with the following output:
 Change Dir: /home/theo/Desktop/Loomo_app_ADP/algo_app/.cxx/cmake/debug/x86_64/CMakeFiles/CMakeTmp
 
-Run Build Command:"/home/theo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_248f0"
-[1/2] Building C object CMakeFiles/cmTC_248f0.dir/feature_tests.c.o
-[2/2] Linking C executable cmTC_248f0
+Run Build Command:"/home/theo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_ba2ab"
+[1/2] Building C object CMakeFiles/cmTC_ba2ab.dir/feature_tests.c.o
+[2/2] Linking C executable cmTC_ba2ab
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -145,17 +145,17 @@ Run Build Command:"/home/theo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_
 Determining if the CXX compiler works passed with the following output:
 Change Dir: /home/theo/Desktop/Loomo_app_ADP/algo_app/.cxx/cmake/debug/x86_64/CMakeFiles/CMakeTmp
 
-Run Build Command:"/home/theo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_3cc64"
-[1/2] Building CXX object CMakeFiles/cmTC_3cc64.dir/testCXXCompiler.cxx.o
-[2/2] Linking CXX executable cmTC_3cc64
+Run Build Command:"/home/theo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_7a566"
+[1/2] Building CXX object CMakeFiles/cmTC_7a566.dir/testCXXCompiler.cxx.o
+[2/2] Linking CXX executable cmTC_7a566
 
 
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: /home/theo/Desktop/Loomo_app_ADP/algo_app/.cxx/cmake/debug/x86_64/CMakeFiles/CMakeTmp
 
-Run Build Command:"/home/theo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_62f1f"
-[1/2] Building CXX object CMakeFiles/cmTC_62f1f.dir/CMakeCXXCompilerABI.cpp.o
-[2/2] Linking CXX executable cmTC_62f1f
+Run Build Command:"/home/theo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_c8f41"
+[1/2] Building CXX object CMakeFiles/cmTC_c8f41.dir/CMakeCXXCompilerABI.cpp.o
+[2/2] Linking CXX executable cmTC_c8f41
 Android (7155654, based on r399163b1) clang version 11.0.5 (https://android.googlesource.com/toolchain/llvm-project 87f1315dfbea7c137aa2e6d362dbb457e388158d)
 Target: x86_64-none-linux-android22
 Thread model: posix
@@ -165,16 +165,16 @@ Found candidate GCC installation: /home/theo/Android/Sdk/ndk-bundle/toolchains/l
 Selected GCC installation: /home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/x86_64-linux-android/4.9.x
 Candidate multilib: .;@m64
 Selected multilib: .;@m64
- "/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/ld" --sysroot=/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -pie -z noexecstack --warn-shared-textrel -z now -z relro --hash-style=gnu --hash-style=both --enable-new-dtags --eh-frame-hdr -m elf_x86_64 -dynamic-linker /system/bin/linker64 -o cmTC_62f1f /home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/x86_64-linux-android/22/crtbegin_dynamic.o -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/11.0.5/lib/linux/x86_64 -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/x86_64-linux-android/4.9.x -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/x86_64-linux-android/4.9.x/../../../../x86_64-linux-android/lib/../lib64 -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/x86_64-linux-android/22 -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/x86_64-linux-android -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/x86_64-linux-android/4.9.x/../../../../x86_64-linux-android/lib -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libgcc_real.a --exclude-libs libatomic.a --build-id=sha1 --no-rosegment --fatal-warnings --no-undefined --gc-sections CMakeFiles/cmTC_62f1f.dir/CMakeCXXCompilerABI.cpp.o -Bstatic -lc++ -Bdynamic -lm -lgcc -ldl -lc -lgcc -ldl /home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/x86_64-linux-android/22/crtend_android.o
+ "/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/ld" --sysroot=/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -pie -z noexecstack --warn-shared-textrel -z now -z relro --hash-style=gnu --hash-style=both --enable-new-dtags --eh-frame-hdr -m elf_x86_64 -dynamic-linker /system/bin/linker64 -o cmTC_c8f41 /home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/x86_64-linux-android/22/crtbegin_dynamic.o -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/11.0.5/lib/linux/x86_64 -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/x86_64-linux-android/4.9.x -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/x86_64-linux-android/4.9.x/../../../../x86_64-linux-android/lib/../lib64 -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/x86_64-linux-android/22 -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/x86_64-linux-android -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/x86_64-linux-android/4.9.x/../../../../x86_64-linux-android/lib -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libgcc_real.a --exclude-libs libatomic.a --build-id=sha1 --no-rosegment --fatal-warnings --no-undefined --gc-sections CMakeFiles/cmTC_c8f41.dir/CMakeCXXCompilerABI.cpp.o -Bstatic -lc++ -Bdynamic -lm -lgcc -ldl -lc -lgcc -ldl /home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/x86_64-linux-android/22/crtend_android.o
 
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(CMAKE_LINKER-NOTFOUND|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/theo/Desktop/Loomo_app_ADP/algo_app/.cxx/cmake/debug/x86_64/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/home/theo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_62f1f"]
-  ignore line: [[1/2] Building CXX object CMakeFiles/cmTC_62f1f.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [[2/2] Linking CXX executable cmTC_62f1f]
+  ignore line: [Run Build Command:"/home/theo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_c8f41"]
+  ignore line: [[1/2] Building CXX object CMakeFiles/cmTC_c8f41.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [[2/2] Linking CXX executable cmTC_c8f41]
   ignore line: [Android (7155654, based on r399163b1) clang version 11.0.5 (https://android.googlesource.com/toolchain/llvm-project 87f1315dfbea7c137aa2e6d362dbb457e388158d)]
   ignore line: [Target: x86_64-none-linux-android22]
   ignore line: [Thread model: posix]
@@ -186,7 +186,7 @@ Parsed CXX implicit link information from above output:
   ignore line: [@m64]
   ignore line: [Selected multilib: .]
   ignore line: [@m64]
-  link line: [ "/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/ld" --sysroot=/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -pie -z noexecstack --warn-shared-textrel -z now -z relro --hash-style=gnu --hash-style=both --enable-new-dtags --eh-frame-hdr -m elf_x86_64 -dynamic-linker /system/bin/linker64 -o cmTC_62f1f /home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/x86_64-linux-android/22/crtbegin_dynamic.o -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/11.0.5/lib/linux/x86_64 -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/x86_64-linux-android/4.9.x -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/x86_64-linux-android/4.9.x/../../../../x86_64-linux-android/lib/../lib64 -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/x86_64-linux-android/22 -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/x86_64-linux-android -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/x86_64-linux-android/4.9.x/../../../../x86_64-linux-android/lib -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libgcc_real.a --exclude-libs libatomic.a --build-id=sha1 --no-rosegment --fatal-warnings --no-undefined --gc-sections CMakeFiles/cmTC_62f1f.dir/CMakeCXXCompilerABI.cpp.o -Bstatic -lc++ -Bdynamic -lm -lgcc -ldl -lc -lgcc -ldl /home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/x86_64-linux-android/22/crtend_android.o]
+  link line: [ "/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/ld" --sysroot=/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -pie -z noexecstack --warn-shared-textrel -z now -z relro --hash-style=gnu --hash-style=both --enable-new-dtags --eh-frame-hdr -m elf_x86_64 -dynamic-linker /system/bin/linker64 -o cmTC_c8f41 /home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/x86_64-linux-android/22/crtbegin_dynamic.o -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/11.0.5/lib/linux/x86_64 -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/x86_64-linux-android/4.9.x -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/x86_64-linux-android/4.9.x/../../../../x86_64-linux-android/lib/../lib64 -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/x86_64-linux-android/22 -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/x86_64-linux-android -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/x86_64-linux-android/4.9.x/../../../../x86_64-linux-android/lib -L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libgcc_real.a --exclude-libs libatomic.a --build-id=sha1 --no-rosegment --fatal-warnings --no-undefined --gc-sections CMakeFiles/cmTC_c8f41.dir/CMakeCXXCompilerABI.cpp.o -Bstatic -lc++ -Bdynamic -lm -lgcc -ldl -lc -lgcc -ldl /home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/x86_64-linux-android/22/crtend_android.o]
     arg [/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/ld] ==> ignore
     arg [--sysroot=/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot] ==> ignore
     arg [-pie] ==> ignore
@@ -203,7 +203,7 @@ Parsed CXX implicit link information from above output:
     arg [-dynamic-linker] ==> ignore
     arg [/system/bin/linker64] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_62f1f] ==> ignore
+    arg [cmTC_c8f41] ==> ignore
     arg [/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/x86_64-linux-android/22/crtbegin_dynamic.o] ==> ignore
     arg [-L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/11.0.5/lib/linux/x86_64] ==> dir [/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/11.0.5/lib/linux/x86_64]
     arg [-L/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/x86_64-linux-android/4.9.x] ==> dir [/home/theo/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/x86_64-linux-android/4.9.x]
@@ -223,7 +223,7 @@ Parsed CXX implicit link information from above output:
     arg [--fatal-warnings] ==> ignore
     arg [--no-undefined] ==> ignore
     arg [--gc-sections] ==> ignore
-    arg [CMakeFiles/cmTC_62f1f.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_c8f41.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-Bstatic] ==> ignore
     arg [-lc++] ==> lib [c++]
     arg [-Bdynamic] ==> ignore
@@ -251,9 +251,9 @@ Parsed CXX implicit link information from above output:
 Detecting CXX [-std=c++1z] compiler features compiled with the following output:
 Change Dir: /home/theo/Desktop/Loomo_app_ADP/algo_app/.cxx/cmake/debug/x86_64/CMakeFiles/CMakeTmp
 
-Run Build Command:"/home/theo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_3d60f"
-[1/2] Building CXX object CMakeFiles/cmTC_3d60f.dir/feature_tests.cxx.o
-[2/2] Linking CXX executable cmTC_3d60f
+Run Build Command:"/home/theo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_80d7a"
+[1/2] Building CXX object CMakeFiles/cmTC_80d7a.dir/feature_tests.cxx.o
+[2/2] Linking CXX executable cmTC_80d7a
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -318,9 +318,9 @@ Run Build Command:"/home/theo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
 Change Dir: /home/theo/Desktop/Loomo_app_ADP/algo_app/.cxx/cmake/debug/x86_64/CMakeFiles/CMakeTmp
 
-Run Build Command:"/home/theo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_1f94d"
-[1/2] Building CXX object CMakeFiles/cmTC_1f94d.dir/feature_tests.cxx.o
-[2/2] Linking CXX executable cmTC_1f94d
+Run Build Command:"/home/theo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_7c100"
+[1/2] Building CXX object CMakeFiles/cmTC_7c100.dir/feature_tests.cxx.o
+[2/2] Linking CXX executable cmTC_7c100
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -385,9 +385,9 @@ Run Build Command:"/home/theo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
 Change Dir: /home/theo/Desktop/Loomo_app_ADP/algo_app/.cxx/cmake/debug/x86_64/CMakeFiles/CMakeTmp
 
-Run Build Command:"/home/theo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_c0ee5"
-[1/2] Building CXX object CMakeFiles/cmTC_c0ee5.dir/feature_tests.cxx.o
-[2/2] Linking CXX executable cmTC_c0ee5
+Run Build Command:"/home/theo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_b8e54"
+[1/2] Building CXX object CMakeFiles/cmTC_b8e54.dir/feature_tests.cxx.o
+[2/2] Linking CXX executable cmTC_b8e54
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -452,9 +452,9 @@ Run Build Command:"/home/theo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
 Change Dir: /home/theo/Desktop/Loomo_app_ADP/algo_app/.cxx/cmake/debug/x86_64/CMakeFiles/CMakeTmp
 
-Run Build Command:"/home/theo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_df616"
-[1/2] Building CXX object CMakeFiles/cmTC_df616.dir/feature_tests.cxx.o
-[2/2] Linking CXX executable cmTC_df616
+Run Build Command:"/home/theo/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_04a07"
+[1/2] Building CXX object CMakeFiles/cmTC_04a07.dir/feature_tests.cxx.o
+[2/2] Linking CXX executable cmTC_04a07
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers

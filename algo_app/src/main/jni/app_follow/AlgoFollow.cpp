@@ -20,7 +20,8 @@ namespace ninebot_algo
                 :AlgoBase(rawInterface,run_sleep_ms,true)
         {
                 mRawDataInterface->ExecuteHeadMode(0);
-                mRawDataInterface->ExecuteHeadPos(0, 0.7, 0);            
+                head_pitch=0.3;
+                mRawDataInterface->ExecuteHeadPos(0, head_pitch, 0);
                 m_is_init_succed = false;
                 m_ptime = 10;
                 m_isRender = isRender;
@@ -39,7 +40,7 @@ namespace ninebot_algo
             this->stopPoseRecord();
             
             mRawDataInterface->ExecuteHeadMode(0);
-            mRawDataInterface->ExecuteHeadPos(0, 0.7, 0);      
+            mRawDataInterface->ExecuteHeadPos(0, head_pitch, 0);
 
             if(m_p_local_mapping) {
                 delete m_p_local_mapping;
@@ -82,7 +83,7 @@ namespace ninebot_algo
 		bool AlgoFollow::init()
 		{
             mRawDataInterface->ExecuteHeadMode(0);
-            mRawDataInterface->ExecuteHeadPos(0, 0.7, 0);
+            mRawDataInterface->ExecuteHeadPos(0, head_pitch, 0);
 
 			raw_depth.image = cv::Mat::zeros(cv::Size(320, 240), CV_16UC1);
 			raw_depth.timestampSys = 0;
@@ -250,7 +251,7 @@ namespace ninebot_algo
                 mRawDataInterface->ExecuteCmd(0.0f, 0.0f, mRawDataInterface->getCurrentTimestampSys());
                 ALOGW("server disconnected");
                 mRawDataInterface->ExecuteHeadMode(0);
-                mRawDataInterface->ExecuteHeadPos(0, 0.7, 0);      
+                mRawDataInterface->ExecuteHeadPos(0, head_pitch, 0);
                 return;
             }
 
@@ -260,7 +261,7 @@ namespace ninebot_algo
             if (info_send_image < 0) {
                 ALOGW("server send iamge failed");
                 mRawDataInterface->ExecuteHeadMode(0);
-                mRawDataInterface->ExecuteHeadPos(0, 0.7, 0);
+                mRawDataInterface->ExecuteHeadPos(0, head_pitch, 0);
                 return;
             }
             else {
@@ -515,7 +516,8 @@ namespace ninebot_algo
             // else {
             //     head_pitch_speed = 0.0f;
             // }
-
+            // temporaire bloque pitch head
+            head_pitch_speed=0;
             mRawDataInterface->ExecuteHeadMode(1);
             if (m_is_track_head)
                 mRawDataInterface->ExecuteHeadSpeed(head_yaw_speed,head_pitch_speed,0);

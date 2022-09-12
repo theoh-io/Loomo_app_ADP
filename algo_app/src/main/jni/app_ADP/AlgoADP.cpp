@@ -4,6 +4,8 @@
 #include "Quaternion.h"
 #include "Vector3.h"
 
+#include <thread>
+#include <mutex>
 #include <algorithm>
 #include "SocketServer.h"
 
@@ -19,13 +21,17 @@ namespace ninebot_algo
         AlgoADP::AlgoADP(RawData *rawInterface, int run_sleep_ms, bool isRender)
                 :AlgoBase(rawInterface,run_sleep_ms,true)
         {
+            head_pitch= 0;
+            head_yaw= -1.5;
             mRawDataInterface->ExecuteHeadMode(0);
-            mRawDataInterface->ExecuteHeadPos(-0.7, 0.0, 0);
+            mRawDataInterface->ExecuteHeadPos(head_yaw, head_pitch, 0);
             m_is_init_succed = false;
-            m_ptime = 10;
+            m_ptime = 1;
             m_isRender = isRender;
             pose_isRecording = false;
             canvas = cv::Mat::zeros( cv::Size(640, 360), CV_8UC3 );
+            render_depth=true; // if true will reduce size of camera rendering and render depth on the side
+            text_pos=400;
             m_safety_control = true;
             m_is_track_head = false;
             m_is_track_vehicle = false;
@@ -39,7 +45,7 @@ namespace ninebot_algo
             this->stopPoseRecord();
 
             mRawDataInterface->ExecuteHeadMode(0);
-            mRawDataInterface->ExecuteHeadPos(-0.7, 0.0, 0);
+            mRawDataInterface->ExecuteHeadPos(head_yaw, head_pitch, 0);
 
             if(m_p_local_mapping) {
                 delete m_p_local_mapping;
@@ -120,8 +126,8 @@ namespace ninebot_algo
             mRawDataInterface->getCalibrationDS4T(calib);
 
             string serial = RawData::retrieveRobotSerialNumber();
-            ALOGD("robot serial: %s", serial.c_str());
-            ALOGD("robot model: %d", RawData::retrieveRobotModel());
+            //ALOGD("robot serial: %s", serial.c_str());
+            //ALOGD("robot model: %d", RawData::retrieveRobotModel());
             m_is_init_succed = true;
 
             m_p_server_control = new SocketServer(8080);
@@ -196,11 +202,12 @@ namespace ninebot_algo
 
         bool AlgoADP::step()
         {
+            ALOGD("step start");
             /*! Get start timestamp for calculating algorithm runtime */
             auto start = std::chrono::high_resolution_clock::now();
 
             if(!m_is_init_succed){
-                ALOGD("AlgoADP: init false");
+                //ALOGD("AlgoADP: init false");
                 return false;
             }
 
@@ -208,19 +215,19 @@ namespace ninebot_algo
                 mRawDataInterface->retrieveDepth(raw_depth, false);
                 if(raw_depth.timestampSys==0)
                 {
-                    ALOGD("depth wrong");
+                    //ALOGD("depth wrong");
                     return false;
                 }
                 // check if depth is duplicate
                 if(t_old==raw_depth.timestampSys)
                 {
-                    ALOGD("depth duplicate: %lld",raw_depth.timestampSys/1000);
+                    //ALOGD("depth duplicate: %lld",raw_depth.timestampSys/1000);
                     return true;
                 }
                 else
                 {
                     t_old=raw_depth.timestampSys;
-                    ALOGD("depth correct");
+                    //ALOGD("depth correct");
                 }
             }
 
@@ -240,12 +247,18 @@ namespace ninebot_algo
              * ********************************************************************* */
             string contents;
 
+            ALOGD("rendering start");
+            auto start_render = std::chrono::high_resolution_clock::now();
             if(m_isRender)
             {
                 /*! Copy internal canvas to intermediate buffer mDisplayIm */
                 renderDisplay();
                 setDisplayData();
             }
+
+            auto end_render = std::chrono::high_resolution_clock::now();
+            std::chrono::duration<double, std::milli> elapsed_render = end_render-start_render;
+            ALOGD("render time: %f",elapsed_render.count());
 
             /*! Calculate the algorithm runtime */
             auto end = std::chrono::high_resolution_clock::now();
@@ -259,33 +272,73 @@ namespace ninebot_algo
             return true;
         }
 
-        void AlgoADP::stepServer() {
+        void AlgoADP::ImgProcessing(){
+            ALOGD("in ImgProcessing");
+            this->sendImage();
+            this->receiveBbox();
+            this->sendPositions();
+        }
 
-            // generate mapping
-            // mRawDataInterface->retrieveDS4Color(raw_colords4, true);
+        void AlgoADP::stepServer() {
+            ALOGD("in step Server");
+
+            this->sendStates();
+
+            this->ImgProcessing();
+
+            this->receiveCtrl();
+
+
+            //std::thread t1(&AlgoADP::ImgProcessing, this);
+            //std::thread t1(&AlgoADP::receiveCtrl, this);
+            //t1.join();
+            //std::vector<std::thread> threads;
+            //threads.push_back(std::thread(&AlgoADP::ImgProcessing, this));
+            //threads.push_back(std::thread(&AlgoADP::sendStates, this));
+            //threads.push_back(std::thread(&AlgoADP::receiveCtrl, this));
+            //this->ImgProcessing();
+            //std::for_each(threads.begin(),threads.end(),std::mem_fn(&std::thread::join));
+        }
+
+        
+
+        void AlgoADP::sendImage(){
+            ALOGD("in sendImage");
+            auto startimg = std::chrono::high_resolution_clock::now();
+            //Get the image from Camera
+            //std::lock_guard<std::mutex> guard(mMutexImg);
+
             mRawDataInterface->retrieveColor(raw_color, true);
 
-            ALOGD("raw_color: (%lld,%d,%d,%d)", raw_color.timestampSys, raw_color.image.cols, raw_color.image.rows, raw_color.image.channels());
-
+            // ALOGD("raw_color: (%lld,%d,%d,%d)", raw_color.timestampSys, raw_color.image.cols, raw_color.image.rows, raw_color.image.channels());
+            //Handle Exceptions when Camera is not accessible or Connection lost to server
             if (raw_color.image.empty()) {
                 ALOGW("empty raw_color image");
                 mRawDataInterface->ExecuteCmd(0.0f, 0.0f, mRawDataInterface->getCurrentTimestampSys());
+                auto endimg = std::chrono::high_resolution_clock::now();
+                std::chrono::duration<double, std::milli> elapsedimg = endimg-startimg;
+                ALOGD("img time: %f",elapsedimg.count());
                 return;
             }
-
             if (m_p_server_control->isStopped()) {
                 mRawDataInterface->ExecuteCmd(0.0f, 0.0f, mRawDataInterface->getCurrentTimestampSys());
                 ALOGW("server stopped");
+                auto endimg = std::chrono::high_resolution_clock::now();
+                std::chrono::duration<double, std::milli> elapsedimg = endimg-startimg;
+                ALOGD("img time: %f",elapsedimg.count());
                 return;
             }
-
             if (!m_p_server_control->isConnected()) {
                 mRawDataInterface->ExecuteCmd(0.0f, 0.0f, mRawDataInterface->getCurrentTimestampSys());
                 ALOGW("server disconnected");
                 mRawDataInterface->ExecuteHeadMode(0);
-                mRawDataInterface->ExecuteHeadPos(-0.7, 0.0 , 0);
+                mRawDataInterface->ExecuteHeadPos(head_yaw, head_pitch , 0);
+                auto endimg = std::chrono::high_resolution_clock::now();
+                std::chrono::duration<double, std::milli> elapsedimg = endimg-startimg;
+                ALOGD("img time: %f",elapsedimg.count());
                 return;
             }
+
 
             //send image
             cv::Mat image_send;
@@ -294,15 +347,26 @@ namespace ninebot_algo
             if (info_send_image < 0) {
                 ALOGW("server send image failed");
                 mRawDataInterface->ExecuteHeadMode(0);
-                mRawDataInterface->ExecuteHeadPos(-0.7, 0.0, 0);
-                return;
+                mRawDataInterface->ExecuteHeadPos(head_yaw, head_pitch, 0);
+                //return;
             }
             else {
                 ALOGW("server send image succeeded");
             }
 
-            //send state
+            auto endimg = std::chrono::high_resolution_clock::now();
+            std::chrono::duration<double, std::milli> elapsedimg = endimg-startimg;
+            ALOGD("img time: %f",elapsedimg.count());
+
+
+
+
+        }
+
+        void AlgoADP::sendStates() {
+            ALOGD("in sendStates");
             // Send the state of the Loomo {x,y,heading,vx,w,ax,ay}
+            auto startstate = std::chrono::high_resolution_clock::now();
             float* states = new float[5];
             mRawDataInterface->retrieveOdometry(raw_odometry, -1);
             states[0] = float(raw_odometry.twist.pose.x);
@@ -314,8 +378,15 @@ namespace ninebot_algo
             int info_send_state = m_p_server_estimation->sendFloats(states, 5);
 
             delete[] states;
+            auto endstates = std::chrono::high_resolution_clock::now();
+            std::chrono::duration<double, std::milli> elapsedstates = endstates-startstate;
+            ALOGD("states time: %f",elapsedstates.count());
+        }
 
+        void AlgoADP::receiveBbox(){
+            ALOGD("in receive bbox");
             // Receive Bounding Box coordinates (5 floats)
+            auto startbbox = std::chrono::high_resolution_clock::now();
             float* floats_recv = new float[25];
             int rcv_info_test = m_p_server_perception_2->recvFloats(floats_recv, 25);
             if (rcv_info_test < 0) {
@@ -331,9 +402,15 @@ namespace ninebot_algo
             // }
             bounding_box = floats_recv;
             delete[] floats_recv;
+            auto endbbox = std::chrono::high_resolution_clock::now();
+            std::chrono::duration<double, std::milli> elapsedbbox = endbbox-startbbox;
+            ALOGD("bbox time: %f",elapsedbbox.count());
 
+        }
 
-            //send positions
+        void AlgoADP::sendPositions(){
+            ALOGD("in sendPosition");
+            auto startpos = std::chrono::high_resolution_clock::now();
             m_roi_color.width = int(bounding_box[2] * m_down_scale);
             m_roi_color.height = int(bounding_box[3] * m_down_scale);
             m_roi_color.x = (bounding_box[0] - 320/m_down_scale) * m_down_scale + 320;
@@ -342,10 +419,12 @@ namespace ninebot_algo
             // m_roi_color.x = int(m_roi_color.x - m_roi_color.width/2);
             // m_roi_color.y = int(m_roi_color.y - m_roi_color.height/2);
 
+
             if (bounding_box[4] > 0.5)
                 m_is_detected = true;
             else
                 m_is_detected = false;
+
 
             float target_theta_wrt_head =0.0f;
             if (m_is_detected) {
@@ -357,14 +436,49 @@ namespace ninebot_algo
                 m_target_theta = 0.0f;
                 target_theta_wrt_head = 0.0f;
             }
-            
-            // Receive Control commands (2 floats)
+
+            //Once we extracted the depth of the target can move head
+            auto start_head = std::chrono::high_resolution_clock::now();
+
+
+            this->trackHead(m_target_theta);
+
+
+            auto end_head = std::chrono::high_resolution_clock::now();
+            std::chrono::duration<double, std::milli> elapsed_head = end_head-start_head;
+            ALOGD("head time: %f",elapsed_head.count());
+            // send positions: distance to prediction and mapping
+
+            float* position_obj = new float[10];
+            position_obj[0] = m_target_distance * cos(m_target_theta);
+            position_obj[1] = m_target_distance * sin(m_target_theta);
+
+            //Temporary locked to only 1 Object being detected
+            for (int i=2; i<10; i++){
+                position_obj[i]=0.0;
+            }
+            int info_send_perception = m_p_server_prediction->sendFloats(position_obj, 10);
+            int info_send_mapping = m_p_server_mapping->sendFloats(position_obj, 10);
+            delete[] position_obj;
+            auto enddepth = std::chrono::high_resolution_clock::now();
+            std::chrono::duration<double, std::milli> elapseddepth = enddepth-startpos;
+            ALOGD("depth time: %f",elapseddepth.count());
+
+        }
+
+        void AlgoADP::receiveCtrl(){
+            ALOGD("in recvCtrl");
+            auto startctrl = std::chrono::high_resolution_clock::now();
             float* floats_recv_control = new float[2];
             int rcv_info_test_control = m_p_server_control->recvFloats(floats_recv_control, 2);
             ccmd = floats_recv_control;
             delete[] floats_recv_control;
             control_cmd[0] = 0.0;
             control_cmd[1] = 0.0;
+
+            auto rcv_ctrl = std::chrono::high_resolution_clock::now();
+            std::chrono::duration<double, std::milli> elapsedrcv = rcv_ctrl-startctrl;
+            ALOGD("rcv command time: %f",elapsedrcv.count());
 
             if (rcv_info_test_control < 0)
             {
@@ -378,24 +492,16 @@ namespace ninebot_algo
                 control_cmd[0] = *(float*)&ccmd[0];
                 control_cmd[1] = *(float*)&ccmd[1];
             }
-        
-            // send control cmds
-            this->trackHead(m_target_theta);
-            this->trackVehicle(control_cmd[0], control_cmd[1]);
-            // ALOGD("Vehicle Target: target_distance = %f, target_theta_wrt_head = %f", m_target_distance, target_theta_wrt_head);
 
-            // send positions: distance to prediction and mapping
-            float* position_obj = new float[10];
-            position_obj[0] = m_target_distance * cos(m_target_theta);
-            position_obj[1] = m_target_distance * sin(m_target_theta);
-            for (int i=2; i<10; i++)
-            {
-                position_obj[i]=0.0;
-            }
-            int info_send_perception = m_p_server_prediction->sendFloats(position_obj, 10);
-            int info_send_mapping = m_p_server_mapping->sendFloats(position_obj, 10);
-            delete[] position_obj;
-            return;
+            // send control cmds
+            this->trackVehicle(control_cmd[0], control_cmd[1]);
+            auto track = std::chrono::high_resolution_clock::now();
+            std::chrono::duration<double, std::milli> elapsedtrack = track-rcv_ctrl;
+            ALOGD("track vehichle time: %f",elapsedtrack.count());
+            // ALOGD("Vehicle Target: target_distance = %f, target_theta_wrt_head = %f", m_target_distance, target_theta_wrt_head);
+            auto endctrl = std::chrono::high_resolution_clock::now();
+            std::chrono::duration<double, std::milli> elapsedctrl = endctrl-startctrl;
+            ALOGD("ctrl time: %f",elapsedctrl.count());
         }
 
         void AlgoADP::switchHeadTracker() {
@@ -429,6 +535,7 @@ namespace ninebot_algo
         float AlgoADP::runTime()
         {
             std::lock_guard<std::mutex> lock(mMutexTimer);
+            ALOGD("in Runtime, m_ptime value: %f",m_ptime);
             return m_ptime;
         }
 
@@ -562,51 +669,56 @@ namespace ninebot_algo
         }
 
         void AlgoADP::trackHead(const float target_theta_head) {
-            float w = 0.0f;
-            float head_pitch_speed = 0.0f;
-            float head_yaw_speed = 0.0f;
-            mRawDataInterface->retrieveHeadPos(raw_headpos);
+            auto start_headtrack = std::chrono::high_resolution_clock::now();
+            if(m_is_track_head) {
+                float w = 0.0f;
+                float head_pitch_speed = 0.0f;
+                float head_yaw_speed = 0.0f;
+                mRawDataInterface->retrieveHeadPos(raw_headpos);
 
-            // yaw
-            if (m_p_head_yaw_tracker){
-                if (m_is_detected)
-                    head_yaw_speed = m_p_head_yaw_tracker->calculate(target_theta_head, raw_headpos.yaw);
+                // yaw
+                if (m_p_head_yaw_tracker) {
+                    if (m_is_detected)
+                        head_yaw_speed = m_p_head_yaw_tracker->calculate(target_theta_head,
+                                                                         raw_headpos.yaw);
+                    else
+                        head_yaw_speed = m_p_head_yaw_tracker->calculate(raw_headpos.yaw,
+                                                                         raw_headpos.yaw);
+                }
+
+                // pitch
+                if (m_p_head_pitch_tracker) {
+                    head_pitch_speed = m_p_head_pitch_tracker->calculate(head_pitch, raw_headpos.pitch);
+                }
+                //const int HEIGHT_COLOR_IMG = 480;
+                //if (m_roi_color.y < HEIGHT_COLOR_IMG / 6) {
+                //    if (raw_headpos.pitch > 1.0f) {
+                //        head_pitch_speed = -0.1f;
+                //    } else {
+                //        head_pitch_speed = 0.3f;
+                //    }
+                //} else if (m_roi_color.y > (HEIGHT_COLOR_IMG / 4)) {
+                //    if (raw_headpos.pitch < 0.05f) {
+                //        head_pitch_speed = 0.1f;
+                //    } else {
+                //        head_pitch_speed = -0.3f;
+                //    }
+                //} else {
+                //    head_pitch_speed = 0.0f;
+                //}
+
+                mRawDataInterface->ExecuteHeadMode(1);
+                if (m_is_track_head)
+                    mRawDataInterface->ExecuteHeadSpeed(head_yaw_speed, head_pitch_speed, 0);
                 else
-                    head_yaw_speed = m_p_head_yaw_tracker->calculate(raw_headpos.yaw, raw_headpos.yaw);
+                    mRawDataInterface->ExecuteHeadSpeed(0.0f, head_pitch_speed, 0);
+                ALOGD("trackHead: target_theta_head = %f, yaw_speed = %f, pitch_speed = %f", target_theta_head, head_yaw_speed, head_pitch_speed);
             }
 
-            // yaw
-            if (m_p_head_pitch_tracker)
-                head_pitch_speed = m_p_head_pitch_tracker->calculate(0.0f, raw_headpos.pitch);
+            auto end_headtrack = std::chrono::high_resolution_clock::now();
+            std::chrono::duration<double, std::milli> elapsed_headtrack = end_headtrack-start_headtrack;
+            ALOGD("head speed time: %f",elapsed_headtrack.count());
 
-            // // pitch
-            // const int HEIGHT_COLOR_IMG = 480;
-            // if (m_roi_color.y < HEIGHT_COLOR_IMG / 6){
-            //     if (raw_headpos.pitch > 1.0f){
-            //         head_pitch_speed = -0.1f;
-            //     }
-            //     else {
-            //         head_pitch_speed = 0.3f;
-            //     }
-            // } else if (m_roi_color.y > ( HEIGHT_COLOR_IMG / 4)){
-            //     if (raw_headpos.pitch < 0.05f){
-            //         head_pitch_speed = 0.1f;
-            //     }
-            //     else {
-            //         head_pitch_speed = -0.3f;
-            //     }
-            // }
-            // else {
-            //     head_pitch_speed = 0.0f;
-            // }
-
-            mRawDataInterface->ExecuteHeadMode(1);
-            if (m_is_track_head)
-                mRawDataInterface->ExecuteHeadSpeed(head_yaw_speed,head_pitch_speed,0);
-            else
-                mRawDataInterface->ExecuteHeadSpeed(0.0f,head_pitch_speed,0);
-
-            ALOGD("trackHead: target_theta_head = %f, yaw_speed = %f, pitch_speed = %f", target_theta_head, head_yaw_speed, head_pitch_speed);
         }
 
         void AlgoADP::trackVehicle(const float vehicle_linear_velocity, const float vehicle_angular_velocity) {
@@ -640,7 +752,6 @@ namespace ninebot_algo
         }
 
         void AlgoADP::ExtractTarget(float & target_distance, float & target_theta_wrt_head){
-
             mRawDataInterface->retrieveHeadPos(raw_headpos);
             m_p_depth_processor->setPitch(raw_headpos.pitch);
             ALOGD("ExtractTarget: setPitch = %f", raw_headpos.pitch);
@@ -659,10 +770,20 @@ namespace ninebot_algo
         void AlgoADP::renderDisplay() {
             /*! Draw the result to canvas */
             canvas.setTo(240);
+            float size_color, size_depth;
+            if (render_depth){
+                size_color=0.5;
+                size_depth=1.0;
+            }
+            else{
+                size_color=0.75;
+                size_depth=0.0;
+            }
             if(imgstream_en){
                 if(!raw_color.image.empty()){
+                    // std::lock_guard<std::mutex> guard(mMutexImg);
                     cv::Mat show_color;
-                    const float resize_show_color = 0.5;
+                    const float resize_show_color = size_color;
                     cv::resize(raw_color.image, show_color, cv::Size(), resize_show_color, resize_show_color);
                     if (m_is_detected)
                         cv::rectangle(show_color, cv::Rect(int(m_roi_color.x * resize_show_color), int(m_roi_color.y * resize_show_color), int(m_roi_color.width * resize_show_color), int(m_roi_color.height * resize_show_color)), Scalar(0, 0, 0), 10);
@@ -671,9 +792,9 @@ namespace ninebot_algo
                     cv::Mat ca1 = canvas(cv::Rect(0, 0, flip_color.cols, flip_color.rows));
                     flip_color.copyTo(ca1);
                 }
-                if(!raw_depth.image.empty()){
+                if(!raw_depth.image.empty() && render_depth){
                     cv::Mat show_depth, rescale_depth;
-                    const float resize_show_depth = 1.0;
+                    const float resize_show_depth = size_depth;
                     cv::resize(raw_depth.image, rescale_depth, cv::Size(), resize_show_depth, resize_show_depth);
                     rescale_depth /= 10;
                     rescale_depth.convertTo(show_depth, CV_8U);
@@ -705,12 +826,15 @@ namespace ninebot_algo
                 putText(canvas, contents, cv::Point(0, 330), CV_FONT_HERSHEY_COMPLEX, 1, cv::Scalar(0,0,0), 2);
 
                 if (m_target_distance > 0) {
-                    contents = "D: " + ToString(m_target_distance);
-                    putText(canvas, contents, cv::Point(200, 300), CV_FONT_HERSHEY_COMPLEX, 1.5, cv::Scalar(0,0,0), 2);
-                    contents = "A: " + ToString(m_target_theta/3.14*180.0);
-                    putText(canvas, contents, cv::Point(400, 300), CV_FONT_HERSHEY_COMPLEX, 1.5, cv::Scalar(0,0,0), 2);
+                    contents = "Depth: " + ToString(m_target_distance);
+                    putText(canvas, contents, cv::Point(text_pos, 300), CV_FONT_HERSHEY_COMPLEX, 1, cv::Scalar(0,0,0), 2);
+                    contents = "Angle: " + ToString(m_target_theta/3.14*180.0);
+                    putText(canvas, contents, cv::Point(text_pos, 330), CV_FONT_HERSHEY_COMPLEX, 1, cv::Scalar(0,0,0), 2);
                 }
-
+                contents = "V: " + ToString(control_cmd[0]);
+                putText(canvas, contents, cv::Point(text_pos-200, 300), CV_FONT_HERSHEY_COMPLEX, 1, cv::Scalar(0,0,0), 2);
+                contents = "W: " + ToString(control_cmd[1]);
+                putText(canvas, contents, cv::Point(text_pos-200, 330), CV_FONT_HERSHEY_COMPLEX, 1, cv::Scalar(0,0,0), 2);
             }
         }
 

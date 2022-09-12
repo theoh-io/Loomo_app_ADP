@@ -67,7 +67,8 @@ namespace ninebot_algo
 			/*! Copy internal canvas to intermediate buffer mDisplayIm */
 			void setDisplayData();
 			void renderDisplay();
-
+			//head orientation
+			float head_pitch;
             bool pose_isRecording;
             int nStep;
 			bool m_is_init_succed;

@@ -2,6 +2,7 @@
 #define NINEBOT_ALGO_SOCKET_H
 
 #include <fstream>
+#include <mutex>
 #include "AlgoBase.h"
 #include "SocketServer.h"
 #include "LocalMapping.h"
@@ -64,13 +65,35 @@ namespace ninebot_algo
             void switchVehicleTracker();
 
             float* ccmd;
+            void ImgProcessing();
+            void sendImage();
+            void sendStates();
+            void receiveBbox();
+            void sendPositions();
+            void receiveCtrl();
+
+
 
 
 
         private:
+
+
             /*! Copy internal canvas to intermediate buffer mDisplayIm */
             void setDisplayData();
             void renderDisplay();
+
+
+            bool ready=0;
+
+            float head_pitch;
+            float head_yaw;
+
+            bool render_depth;
+            int text_pos;
+            bool previous_headtrack;
+
+
 
             bool pose_isRecording;
             int nStep;
@@ -96,6 +119,9 @@ namespace ninebot_algo
             float m_ptime;
             bool imgstream_en;
             int64_t m_timestamp_start;
+
+            std::mutex mMutexImg;
+
             SocketServer* m_p_server_control;
 			SocketServer* m_p_server_perception;
             SocketServer* m_p_server_perception_2;

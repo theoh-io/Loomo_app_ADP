@@ -1,4 +1,4 @@
-# Install script for directory: /home/theo/Desktop/loomo-algodev-master/algo_app/src/main/jni
+# Install script for directory: /home/theo/Desktop/Loomo_app_ADP/algo_app/src/main/jni
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/theo/Desktop/loomo-algodev-master/algo_app/.cxx/cmake/release/x86_64/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/theo/Desktop/Loomo_app_ADP/algo_app/.cxx/cmake/release/x86_64/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
