@@ -1,5 +1,6 @@
 # Loomo App for Autonomous-Driving-Pipeline
 
+![Loomo](./img/loomo.gif)
 ## Description 
 This repository presents the code for an Android package running on [Loomo](https://store.segway.com/segway-loomo-mini-transporter-robot-sidekick) from Segway Robotics.
 
@@ -52,7 +53,7 @@ Concerning my Setup I used:
 
 The Project Should be able to build even with the warning messages.
 
-In case you have hard time setting up Android Studio Development environment the app package is also available [APK]!(algo_app-degub.apk)
+In case you have hard time setting up Android Studio Development environment the app package is also available [APK](algo_app-degub.apk). it can be installed using the command  `adb install -t <name apk>` after having previously connected to Loomo using `adb connect <ip>`
 
 ## Dependency 
 - Python 
