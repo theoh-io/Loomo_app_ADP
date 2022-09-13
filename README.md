@@ -1,10 +1,14 @@
 # Loomo App for Autonomous-Driving-Pipeline
 
-![Loomo](./img/loomo.gif)
+<p float="left">
+  <img src="./img/app.gif" height="300" /> 
+  <img src="./img/loomo.gif" height="300" />
+</p>
+
 ## Description 
 This repository presents the code for an Android package running on [Loomo](https://store.segway.com/segway-loomo-mini-transporter-robot-sidekick) from Segway Robotics.
 
-The app used to connect Loomo to the server running [Autonomous Driving Pipeline](https://github.com/theoh-io/Autonomous_driving_pipeline). 
+The app used to connect Loomo to the server running [Autonomous Driving Pipeline](https://github.com/theoh-io/ROS_Autonomous_Driving). 
 
 The app is based on the template provided by [loomo-algodev](https://github.com/segway-robotics/loomo-algodev) that enables native C++ development of robotics applications on Loomo robot.
 
@@ -13,6 +17,16 @@ The app is based on the template provided by [loomo-algodev](https://github.com/
 The official Loomo JAVA SDK is targeting Android developers (https://developer.segwayrobotics.com/), which is not friendly to robotics developer that works with C++ or ROS. This kit builds a bridge between JAVA SDK and C++ interfaces (nienbot_algo::RawData, nienbot_algo::AlgoBase, etc..).
 
 It uses Socket Communication protocol to share information with Server.
+
+### Information Displayed on the screen
+
+* Top Left button: Turn on the App
+* A Button: Activate Head Tracking
+* B Button: Activate Head + Wheel Tracking
+* Start/Stop Algo
+* Text displayed: 
+    * V/W for linear and angular velocity commands received from server.
+    * Depth/Angle: Relative Position of theTarget
 
 ## Communications Summary
     - Loomo --> Server
@@ -70,5 +84,5 @@ In case you have hard time setting up Android Studio Development environment the
 - [ ] Print Emergency Message When Infrared Sensors in range
 - [ ] Fix Head Tracking in Pitch
 - [ ] Send App Runtime to automatically adapt dt_control in ADP
-- [ ] Add Possibility to send 5 Depth info in mapping (currently only 1 target)
+- [ ] Add Possibility to send 5 Depth info in mapping (currently restricted to only 1 target)
 
