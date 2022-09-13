@@ -8,7 +8,7 @@
 ## Description 
 This repository presents the code for an Android package running on [Loomo](https://store.segway.com/segway-loomo-mini-transporter-robot-sidekick) from Segway Robotics.
 
-The app used to connect Loomo to the server running [Autonomous Driving Pipeline](https://github.com/theoh-io/ROS_Autonomous_Driving). 
+The app is used to connect Loomo (Client) to the server running [Autonomous Driving Pipeline](https://github.com/theoh-io/ROS_Autonomous_Driving). 
 
 The app is based on the template provided by [loomo-algodev](https://github.com/segway-robotics/loomo-algodev) that enables native C++ development of robotics applications on Loomo robot.
 
