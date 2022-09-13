@@ -57,7 +57,7 @@ The 3rd party library should be downloaded and extracted to **dependency\3rdpart
 
 https://drive.google.com/drive/folders/1FSVhPz7ZhSJqS4sTjBbKZDFhiEfk5ofH
 
-The installation process can be quite tedious :disappointed_relieved:.
+The installation process of Android Studio and its dependencies can be quite tedious :disappointed_relieved:.
 
 Concerning my Setup I used:
 - Android Sudio  (Try using Android Studio version below 4.0)
