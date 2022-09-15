@@ -16,6 +16,8 @@ The app is based on the template provided by [loomo-algodev](https://github.com/
 
 The official Loomo JAVA SDK is targeting Android developers (https://developer.segwayrobotics.com/), which is not friendly to robotics developer that works with C++ or ROS. This kit builds a bridge between JAVA SDK and C++ interfaces (nienbot_algo::RawData, nienbot_algo::AlgoBase, etc..).
 
+The C++ package of the app is located [here](./algo_app/src/main/jni/app_ADP). 
+
 It uses Socket Communication protocol to share information with Server.
 
 ### Information Displayed on the screen
@@ -42,11 +44,13 @@ It uses Socket Communication protocol to share information with Server.
     - Server --> Loomo
         - Perception 2: Port(8085)
         ---> receive bounding box of the processed detections on server side
+        - Control: Port(8080)
+        ---> receive Linear and Rotation speed command computed by server
 
 ## Debugging
 Debugging the app can be tricky hopefully we have some logging tools available.
 
-To enable Logging Debugging messages we first need to activate it by pushing the logAprAlogo.xml file on Loomo sdcard/ folder. One can use the provided script pushAprAlgoLob.bat to automatically ddo that. By default the logging level is set to 3 (meaning that every logging level above will be printed) but can be changed in this file.
+To enable Logging Debugging messages we first need to activate it by pushing the logAprAlogo.xml file on Loomo sdcard/ folder. One can use the provided script pushAprAlgoLog.bat to automatically ddo that. By default the logging level is set to 3 (meaning that every logging level above will be printed) but can be changed in this file.
 
 To get the Logging we have two solutions. If we run the App with android Studio we can monitor the logging message in Real time using the provided console. Otherwise if we want to analyse the log a-posteriori we just need to pull the file log.txt using the command:  `adb pull sdcard/log.txt `
 
