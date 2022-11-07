@@ -77,10 +77,10 @@ namespace ninebot_algo
                 m_p_server_mapping = NULL;
             }
 
-            if(m_p_server_prediction != NULL) {
-                delete m_p_server_prediction;
-                m_p_server_prediction = NULL;
-            }
+            // if(m_p_server_prediction != NULL) {
+            //     delete m_p_server_prediction;
+            //     m_p_server_prediction = NULL;
+            // }
 
             if(m_p_server_perception_2 != NULL) {
                 delete m_p_server_perception_2;
@@ -134,7 +134,7 @@ namespace ninebot_algo
             m_p_server_perception = new SocketServer(8081);
             m_p_server_estimation = new SocketServer(8082);
             m_p_server_mapping = new SocketServer(8083);
-            m_p_server_prediction = new SocketServer(8084);
+            //m_p_server_prediction = new SocketServer(8084);
             m_p_server_perception_2 = new SocketServer(8085);
 
             m_timestamp_start = mRawDataInterface->getCurrentTimestampSys();
@@ -457,7 +457,7 @@ namespace ninebot_algo
             for (int i=2; i<10; i++){
                 position_obj[i]=0.0;
             }
-            int info_send_perception = m_p_server_prediction->sendFloats(position_obj, 10);
+            //int info_send_perception = m_p_server_prediction->sendFloats(position_obj, 10);
             int info_send_mapping = m_p_server_mapping->sendFloats(position_obj, 10);
             delete[] position_obj;
             auto enddepth = std::chrono::high_resolution_clock::now();
