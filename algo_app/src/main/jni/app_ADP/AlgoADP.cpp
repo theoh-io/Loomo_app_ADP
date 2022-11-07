@@ -82,10 +82,10 @@ namespace ninebot_algo
             //     m_p_server_prediction = NULL;
             // }
 
-            if(m_p_server_perception_2 != NULL) {
-                delete m_p_server_perception_2;
-                m_p_server_perception_2 = NULL;
-            }
+            // if(m_p_server_perception_2 != NULL) {
+            //     delete m_p_server_perception_2;
+            //     m_p_server_perception_2 = NULL;
+            // }
 
             if(m_p_head_yaw_tracker != NULL) {
                 delete m_p_head_yaw_tracker;
@@ -135,7 +135,7 @@ namespace ninebot_algo
             m_p_server_estimation = new SocketServer(8082);
             m_p_server_mapping = new SocketServer(8083);
             //m_p_server_prediction = new SocketServer(8084);
-            m_p_server_perception_2 = new SocketServer(8085);
+            // m_p_server_perception_2 = new SocketServer(8085);
 
             m_timestamp_start = mRawDataInterface->getCurrentTimestampSys();
 
@@ -275,8 +275,8 @@ namespace ninebot_algo
         void AlgoADP::ImgProcessing(){
             ALOGD("in ImgProcessing");
             this->sendImage();
-            this->receiveBbox();
-            this->sendPositions();
+            //this->receiveBbox();
+            //this->sendPositions();
         }
 
         void AlgoADP::stepServer() {
@@ -342,7 +342,7 @@ namespace ninebot_algo
 
             //send image
             cv::Mat image_send;
-            cv::resize(raw_color.image, image_send, cv::Size(640/m_down_scale, 480/m_down_scale));
+            cv::resize(raw_depth.image, image_send, cv::Size(640/m_down_scale, 480/m_down_scale));
             int info_send_image = m_p_server_perception->sendImage(image_send, 640/m_down_scale, 480/m_down_scale);
             if (info_send_image < 0) {
                 ALOGW("server send image failed");
@@ -356,7 +356,26 @@ namespace ninebot_algo
 
             auto endimg = std::chrono::high_resolution_clock::now();
             std::chrono::duration<double, std::milli> elapsedimg = endimg-startimg;
-            ALOGD("img time: %f",elapsedimg.count());
+            ALOGD("RGB img time: %f",elapsedimg.count());
+
+            //send Depth Image
+            cv::Mat depth_image_send;
+            cv::resize(raw_depth.image, depth_image_send, cv::Size(640/m_down_scale, 480/m_down_scale));
+            int info_d_send_image = m_p_server_mapping->sendImage(depth_image_send, 640/m_down_scale, 480/m_down_scale);
+            if (info_send_image < 0) {
+                ALOGW("server send image failed");
+                mRawDataInterface->ExecuteHeadMode(0);
+                mRawDataInterface->ExecuteHeadPos(head_yaw, head_pitch, 0);
+                //return;
+            }
+            else {
+                ALOGW("server send image succeeded");
+            }
+
+            auto endimg = std::chrono::high_resolution_clock::now();
+            std::chrono::duration<double, std::milli> elapsedimg = endimg-startimg;
+            ALOGD("Depth img time: %f",elapsedimg.count());
+
 
 
 
