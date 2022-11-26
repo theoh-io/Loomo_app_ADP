@@ -67,6 +67,7 @@ namespace ninebot_algo
             float* ccmd;
             void ImgProcessing();
             void sendImage();
+            void sendDepth();
             void sendStates();
             void receiveBbox();
             void sendPositions();
@@ -127,6 +128,7 @@ namespace ninebot_algo
             SocketServer* m_p_server_perception_2;
 			SocketServer* m_p_server_estimation;
             SocketServer* m_p_server_mapping;
+            SocketServer* m_p_server_depth;
             SocketServer* m_p_server_prediction;
             SocketServer* m_p_server_perception_3;
 

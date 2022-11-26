@@ -399,7 +399,8 @@ namespace ninebot_algo
 		}
 
 		int SocketServer::sendImage(cv::Mat image, const int width, const int height, const int channels, const int bags) {
-			
+
+			ALOGD("width: %d, height: %d, channels:%d", image.cols, image.rows, image.channels() );
 			if (image.empty()){
 				ALOGE("send failed, empty image");
 				return -1;
@@ -407,6 +408,7 @@ namespace ninebot_algo
 
 			if(image.cols != width || image.rows != height || image.channels() != channels){
 				ALOGE("send failed, format error");
+				ALOGD("width: %d, height: %d, channels:%d", image.cols, image.rows, image.channels() );
 				return -1; 
 			}
 

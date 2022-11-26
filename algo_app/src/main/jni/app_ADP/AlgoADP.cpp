@@ -77,6 +77,11 @@ namespace ninebot_algo
                 m_p_server_mapping = NULL;
             }
 
+            if(m_p_server_depth != NULL) {
+                delete m_p_server_depth;
+                m_p_server_depth = NULL;
+            }
+
             // if(m_p_server_prediction != NULL) {
             //     delete m_p_server_prediction;
             //     m_p_server_prediction = NULL;
@@ -134,6 +139,7 @@ namespace ninebot_algo
             m_p_server_perception = new SocketServer(8081);
             m_p_server_estimation = new SocketServer(8082);
             m_p_server_mapping = new SocketServer(8083);
+            m_p_server_depth = new SocketServer(8084);
             //m_p_server_prediction = new SocketServer(8084);
             // m_p_server_perception_2 = new SocketServer(8085);
 
@@ -274,7 +280,9 @@ namespace ninebot_algo
 
         void AlgoADP::ImgProcessing(){
             ALOGD("in ImgProcessing");
+            //improved sendImage to also send Depth Map
             this->sendImage();
+            this->sendDepth();
             //this->receiveBbox();
             //this->sendPositions();
         }
@@ -342,7 +350,7 @@ namespace ninebot_algo
 
             //send image
             cv::Mat image_send;
-            cv::resize(raw_depth.image, image_send, cv::Size(640/m_down_scale, 480/m_down_scale));
+            cv::resize(raw_color.image, image_send, cv::Size(640/m_down_scale, 480/m_down_scale));
             int info_send_image = m_p_server_perception->sendImage(image_send, 640/m_down_scale, 480/m_down_scale);
             if (info_send_image < 0) {
                 ALOGW("server send image failed");
@@ -358,27 +366,29 @@ namespace ninebot_algo
             std::chrono::duration<double, std::milli> elapsedimg = endimg-startimg;
             ALOGD("RGB img time: %f",elapsedimg.count());
 
+        }
+
+        void AlgoADP::sendDepth(){
             //send Depth Image
+            auto startdepth = std::chrono::high_resolution_clock::now();
+            ALOGD("in Depth");
             cv::Mat depth_image_send;
+            ALOGD("sizeof Depth Image %d", sizeof(raw_depth.image));
             cv::resize(raw_depth.image, depth_image_send, cv::Size(640/m_down_scale, 480/m_down_scale));
-            int info_d_send_image = m_p_server_mapping->sendImage(depth_image_send, 640/m_down_scale, 480/m_down_scale);
-            if (info_send_image < 0) {
+            // depth_image_send = raw_depth.image;
+            int info_d_send_image = m_p_server_mapping->sendImage(depth_image_send, 640/m_down_scale, 480/m_down_scale, 1);
+            if (info_d_send_image < 0) {
                 ALOGW("server send image failed");
                 mRawDataInterface->ExecuteHeadMode(0);
                 mRawDataInterface->ExecuteHeadPos(head_yaw, head_pitch, 0);
-                //return;
+                //return
             }
             else {
                 ALOGW("server send image succeeded");
             }
-
-            auto endimg = std::chrono::high_resolution_clock::now();
-            std::chrono::duration<double, std::milli> elapsedimg = endimg-startimg;
-            ALOGD("Depth img time: %f",elapsedimg.count());
-
-
-
-
+            auto enddepth = std::chrono::high_resolution_clock::now();
+            std::chrono::duration<double, std::milli> elapsed_depth = enddepth-startdepth;
+            ALOGD("Depth img time: %f",elapsed_depth.count());
 
         }
 
@@ -643,6 +653,7 @@ namespace ninebot_algo
             }
             StampedMat local_depth(raw_depth.image, raw_depth.timestampSys);
 
+            ALOGD("DEPTH MAP: %d", sizeof(local_depth));
             // merge all TF requests
             ninebot_tf::vector_req_t reqList;
             ninebot_tf::vector_tf_msg_t resList;
