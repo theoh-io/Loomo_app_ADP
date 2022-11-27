@@ -38,8 +38,7 @@ It uses Socket Communication protocol to share information with Server.
         ---> Send Position Estimation of the Loomo using Built-in  Odometry = Pose (x,y,orientation) and Velocity (linear, angular)
         - Mapping: Port(8083)
         ---> After Receiving bounding box of the target estimates its depth and angle relative to Loomo
-        - Prediction: Port(8084)
-        ---> Send Same info but to the Prediction Node 
+        ---> Now Support up to 5 Target for Depth estimation !
         
     - Server --> Loomo
         - Perception 2: Port(8085)
@@ -84,9 +83,9 @@ In case you have hard time setting up Android Studio Development environment the
 - [x] Draw Depth Image + Camera
 - [x] Print Control Values
 - [x] Print Depth and angle of the Target
-- [ ] Remove Prediction Socket to avoid duplicate and directly subscribe to mapping socket inside ROS Prediction node
+- [x] Remove Prediction Socket to avoid duplicate and directly subscribe to mapping socket inside ROS Prediction node
 - [ ] Print Emergency Message When Infrared Sensors in range
 - [ ] Fix Head Tracking in Pitch
 - [ ] Send App Runtime to automatically adapt dt_control in ADP
-- [ ] Add Possibility to send 5 Depth info in mapping (currently restricted to only 1 target)
+- [x] Add Possibility to send 5 Depth info in mapping (currently restricted to only 1 target)
 
