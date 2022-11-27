@@ -331,8 +331,8 @@ namespace ninebot_algo
             if (!m_p_server_control->isConnected()) {
                 mRawDataInterface->ExecuteCmd(0.0f, 0.0f, mRawDataInterface->getCurrentTimestampSys());
                 ALOGW("server disconnected");
-                mRawDataInterface->ExecuteHeadMode(0);
-                mRawDataInterface->ExecuteHeadPos(head_yaw, head_pitch , 0);
+                //mRawDataInterface->ExecuteHeadMode(0);
+                //mRawDataInterface->ExecuteHeadPos(head_yaw, head_pitch , 0);
                 auto endimg = std::chrono::high_resolution_clock::now();
                 std::chrono::duration<double, std::milli> elapsedimg = endimg-startimg;
                 ALOGD("img time: %f",elapsedimg.count());
@@ -346,8 +346,8 @@ namespace ninebot_algo
             int info_send_image = m_p_server_perception->sendImage(image_send, 640/m_down_scale, 480/m_down_scale);
             if (info_send_image < 0) {
                 ALOGW("server send image failed");
-                mRawDataInterface->ExecuteHeadMode(0);
-                mRawDataInterface->ExecuteHeadPos(head_yaw, head_pitch, 0);
+                //mRawDataInterface->ExecuteHeadMode(0);
+                //mRawDataInterface->ExecuteHeadPos(head_yaw, head_pitch, 0);
                 //return;
             }
             else {
@@ -411,52 +411,53 @@ namespace ninebot_algo
         void AlgoADP::sendPositions(){
             ALOGD("in sendPosition");
             auto startpos = std::chrono::high_resolution_clock::now();
-            m_roi_color.width = int(bounding_box[2] * m_down_scale);
-            m_roi_color.height = int(bounding_box[3] * m_down_scale);
-            m_roi_color.x = (bounding_box[0] - 320/m_down_scale) * m_down_scale + 320;
-            m_roi_color.y = (bounding_box[1] - 240/m_down_scale) * m_down_scale + 240;
-            // convert from center to top-left corner
-            // m_roi_color.x = int(m_roi_color.x - m_roi_color.width/2);
-            // m_roi_color.y = int(m_roi_color.y - m_roi_color.height/2);
-
-
-            if (bounding_box[4] > 0.5)
-                m_is_detected = true;
-            else
-                m_is_detected = false;
-
-
-            float target_theta_wrt_head =0.0f;
-            if (m_is_detected) {
-                ExtractTarget(m_target_distance, target_theta_wrt_head);
-                m_target_theta = target_theta_wrt_head + raw_headpos.yaw;
-            }
-            else {
-                m_target_distance = 0.0f;
-                m_target_theta = 0.0f;
-                target_theta_wrt_head = 0.0f;
-            }
-
-            //Once we extracted the depth of the target can move head
-            auto start_head = std::chrono::high_resolution_clock::now();
-
-
-            this->trackHead(m_target_theta);
-
-
-            auto end_head = std::chrono::high_resolution_clock::now();
-            std::chrono::duration<double, std::milli> elapsed_head = end_head-start_head;
-            ALOGD("head time: %f",elapsed_head.count());
-            // send positions: distance to prediction and mapping
-
             float* position_obj = new float[10];
-            position_obj[0] = m_target_distance * cos(m_target_theta);
-            position_obj[1] = m_target_distance * sin(m_target_theta);
+            for (int i = 0; i < 5; i++) {
+                if (bounding_box[i*5+4] > 0.5)
+                    m_is_detected = true;
+                else
+                    m_is_detected = false;
 
-            //Temporary locked to only 1 Object being detected
-            for (int i=2; i<10; i++){
-                position_obj[i]=0.0;
+                float target_theta_wrt_head = 0.0f;
+                if (m_is_detected) {
+                    m_roi_color.width = int(bounding_box[i*5+2] * m_down_scale);
+                    m_roi_color.height = int(bounding_box[i*5+3] * m_down_scale);
+                    m_roi_color.x = (bounding_box[i*5+0] - 320 / m_down_scale) * m_down_scale + 320;
+                    m_roi_color.y = (bounding_box[i*5+1] - 240 / m_down_scale) * m_down_scale + 240;
+                    // convert from center to top-left corner
+                    // m_roi_color.x = int(m_roi_color.x - m_roi_color.width/2);
+                    // m_roi_color.y = int(m_roi_color.y - m_roi_color.height/2);
+
+
+                    ExtractTarget(m_target_distance, target_theta_wrt_head);
+                    m_target_theta = target_theta_wrt_head + raw_headpos.yaw;
+                    // send positions: distance to prediction and mapping
+                    position_obj[2*i+0] = m_target_distance * cos(m_target_theta);
+                    position_obj[2*i+1] = m_target_distance * sin(m_target_theta);
+                } else {
+                    m_target_distance = 0.0f;
+                    m_target_theta = 0.0f;
+                    target_theta_wrt_head = 0.0f;
+                    position_obj[2*i+0] = 0.0;
+                    position_obj[2*i+1] = 0.0;
+                }
+
+
+
+                //Once we extracted the depth of the target can move head
+                auto start_head = std::chrono::high_resolution_clock::now();
+
+                if ((i==0) and (m_target_theta != 0.0f )){
+                    this->trackHead(m_target_theta);
+                }
+
+
+                auto end_head = std::chrono::high_resolution_clock::now();
+                std::chrono::duration<double, std::milli> elapsed_head = end_head - start_head;
+                ALOGD("head time: %f", elapsed_head.count());
+
             }
+
             //int info_send_perception = m_p_server_prediction->sendFloats(position_obj, 10);
             int info_send_mapping = m_p_server_mapping->sendFloats(position_obj, 10);
             delete[] position_obj;
